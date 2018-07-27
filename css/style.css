@@ -1,0 +1,44 @@
+/* ui kit override */
+.squarelogo-container {
+    min-height: 600px;
+}
+.uk-height-medium {
+  height: 300px;
+}
+/* nav */
+.square-logo {
+    height: 20em;
+}
+/* font */
+* {
+    font-family: 'Open Sans', sans-serif !important;
+}
+.khmer {
+    font-family: 'Content', cursive !important;
+    letter-spacing: normal !important;
+}
+
+.tint {
+    background-color: rgba(0, 0, 0, 0.35);
+    background-blend-mode: multiply;
+    transition: background-color 0.35s;
+}
+.tint:hover {
+    background-color: rgba(0, 0, 0, 0.65);
+    background-blend-mode: multiply;
+    transition: background-color 0.35s;
+}
+.intro-title {
+    font-size: 2em;
+}
+.main-logo {
+    height: 60px;
+}
+@media only screen and (max-width: 1024px) {
+    .squarelogo-container {
+        min-height: 400px;
+    }
+    .square-logo {
+        height: 16em;
+    }
+}
