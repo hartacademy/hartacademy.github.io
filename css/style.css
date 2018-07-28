@@ -7,6 +7,9 @@
 * {
     font-family: 'Open Sans', sans-serif !important;
 }
+a, p, span, h1, h2, h3, h4, h5, h6 {
+    color: #555;
+}
 .khmer {
     font-family: 'Content', cursive !important;
     letter-spacing: normal !important;
@@ -24,6 +27,15 @@
     display: inline-block;
     border-bottom: 2px solid #777;
 }
+.schedule-header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.schedule-header-wrapper h3 {
+    margin: 0;
+    padding: 0;
+}
 
 /* container */
 .page-content {
@@ -37,6 +49,16 @@
     display: flex;
     align-items: center;
 }
+.schedule-title {
+    margin-top: 10px;
+    padding: 0 0 0 10px;
+    background-color: #eee;
+}
+@media only screen and (max-width: 1601px) {
+    .page-content {
+        max-width: 1200px;
+    }
+}
 @media only screen and (max-width: 1024px) {
     .page-content {
         max-width: 960px;
@@ -44,6 +66,11 @@
     .slideshow-margin {
         margin-right: 0;
         margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .page-content {
+        max-width: 800px;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -99,6 +126,34 @@
 }
 .squarelogo-container {
     min-height: 600px;
+}
+.morning {
+    border-left: 20px solid #ffeeb9;
+    padding-left: 8px;
+}
+.noon {
+    border-left: 20px solid #d3d3d3;
+    padding-left: 8px;
+}
+.evening {
+    border-left: 20px solid #036;
+    padding-left: 8px;
+}
+@media only screen and (min-width: 1200px) {
+    .enlarge-on-hover-small {
+        transition: transform 0.35s;
+    }
+    .enlarge-on-hover-small:hover {
+        transform: scale(1.035);
+        transition: transform 0.35s;
+    }
+    .enlarge-on-hover-medium {
+        transition: transform 0.35s;
+    }
+    .enlarge-on-hover-medium:hover {
+        transform: scale(1.1);
+        transition: transform 0.35s;
+    }
 }
 @media only screen and (max-width: 1024px) {
     .squarelogo-container {

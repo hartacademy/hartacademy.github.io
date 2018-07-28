@@ -1,0 +1,194 @@
+{
+  "posts" : {
+    "-LFH0uaeRKCDigO7ZatP" : {
+      "author" : "",
+      "content" : "",
+      "created" : "6/18/2018, 3:34:09 PM",
+      "title" : "No Announcement"
+    }
+  },
+  "schedule" : {
+      "monday" : {
+        "class01" : {
+          "detail" : "6:30 - 7:30 | Basic",
+            "class" : "morning"
+        },
+        "class02" : {
+          "detail" : "Open Mat",
+            "class" : "morning"
+        },
+        "class03" : {
+            "detail" : "16:30 - 17:30 | Kids Jiu Jitsu",
+            "class" : "evening"
+        },
+        "class04" : {
+          "detail" : "18:00 - 18:30 | Sparring",
+            "class" : "evening"
+        },
+        "class05" : {
+          "detail" : "18:30 - 19:45 | Regular",
+            "class" : "evening"
+        },
+        "class06" : {
+          "detail" : "19:45 - 21:15 | No-Gi Regular",
+            "class" : "evening"
+        }
+      },
+      "tuesday" : {
+        "class01" : {
+          "detail" : "18:00 - 18:45 | Work n' Play",
+            "class" : "evening"
+        },
+        "class02" : {
+          "detail" : "18:45 - 19:15 | Fundamental",
+            "class" : "evening"
+        },
+        "class03" : {
+          "detail" : "19:15 - 20:15 | No-Gi Basic",
+            "class" : "evening"
+        },
+        "class04" : {
+          "detail" : "20:15 - 20:45 | Competition",
+            "class" : "evening"
+        }
+      },
+      "wednesday" : {
+        "class01" : {
+          "detail" : "6:30 - 7:30 | Basic",
+            "class" : "morning"
+        },
+        "class02" : {
+          "detail" : "Open Mat",
+            "class" : "morning"
+        },
+        "class03" : {
+            "detail" : "16:30 - 17:30 | Kids Jiu Jitsu",
+            "class" : "evening"
+        },
+        "class04" : {
+          "detail" : "18:00 - 18:30 | Sparring",
+            "class" : "evening"
+        },
+        "class05" : {
+          "detail" : "18:30 - 19:45 | No-Gi Regular",
+            "class" : "evening"
+        },
+        "class06" : {
+          "detail" : "19:45 - 21:15 | Regular",
+            "class" : "evening"
+        }
+      },
+      "thursday" : {
+        "class01" : {
+          "detail" : "18:00 - 18:30 | Fundamental",
+            "class" : "evening"
+        },
+        "class02" : {
+          "detail" : "18:30 - 19:30 | Basic",
+            "class" : "evening"
+        },
+        "class03" : {
+          "detail" : "19:30 - 20:30 | No-Gi Basic",
+            "class" : "evening"
+        },
+        "class04" : {
+          "detail" : "Open mat",
+            "class" : "evening"
+        }
+      },
+      "friday" : {
+        "class01" : {
+          "detail" : "6:30 - 7:30 | No-Gi Basic",
+            "class" : "morning"
+        },
+        "class02" : {
+          "detail" : "Open Mat",
+            "class" : "morning"
+        },
+        "class03" : {
+          "detail" : "18:00 - 18:30 | Fundamental",
+            "class" : "evening"
+        },
+        "class04" : {
+          "detail" : "18:30 - 19:45 | Monthly Tech",
+            "class" : "evening"
+        },
+        "class05" : {
+          "detail" : "Open mat",
+            "class" : "evening"
+        }
+      },
+      "saturday" : {
+        "class01" : {
+          "detail" : "10:00 - 11:00 | Kids Jiu Jitsu",
+            "class" : "noon"
+        },
+        "class02" : {
+          "detail" : "11:30 - 12:30 | Kids Taekwondo",
+            "class" : "noon"
+        },
+        "class03" : {
+          "detail" : "13:00 - 14:30 | No-Gi Regular",
+            "class" : "noon"
+        },
+        "class04" : {
+          "detail" : "15:45 - 15:45 | Women's Basic",
+            "class" : "noon"
+        }
+      },
+      "sunday" : {
+        "class01" : {
+          "detail" : "Open mat",
+            "class" : "noon"
+        },
+        "class02" : {
+          "detail" : "12:00 - 13:00 | Kids Jiu Jitsu",
+            "class" : "noon"
+        },
+        "class03" : {
+          "detail" : " 13:30 - 14:30 | Kids Taekwondo",
+            "class" : "noon"
+        }
+      }
+  },
+  "users" : {
+    "user-01" : {
+      "name" : "Senghong Hour",
+      "position" : "Trainee - White Belt"
+    },
+    "user-02" : {
+      "name" : "Vi",
+      "position" : "Instructor - Purple Belt"
+    }
+  },
+  "membership" : {
+    "6classes" : {
+        "price" : "$65",
+        "description" : "Any 6 classes per month. Valid from the first to the last day of the month"
+    },
+    "12classes" : {
+        "price" : "$80",
+        "description" : "Any 12 classes per month. Valid from the first to the last day of the month"
+    },
+    "unlimitedclasses" : {
+        "price" : "$95",
+        "description" : "All classes per month. Valid from the first to the last day of the month"
+    },
+    "1day" : {
+        "price" : "$15",
+        "description" : "1-day pass for all classes"
+    },
+    "1class" : {
+        "price" : "$12",
+        "description" : "Single (1) class"
+    },
+    "1privateclass" : {
+        "price" : "$45",
+        "description" : "1-hour private class"
+    },
+    "1week" : {
+        "price" : "$40",
+        "description" : "For travelling Jiu Jitsu practitioners. One week of unlimited training. Can only be purchased once"
+    }
+  }
+}

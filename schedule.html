@@ -21,7 +21,7 @@
             <div class="uk-navbar-right">
                 <!-- nav desktop -->
                 <ul class="uk-navbar-nav uk-visible@l">
-                    <li class="uk-active">
+                    <li>
                         <a href="index.html">
                             HOME
                         </a>
@@ -31,7 +31,7 @@
                             ABOUT US
                         </a>
                     </li>
-                    <li>
+                    <li class="uk-active">
                         <a class="uk-button uk-button-text" href="schedule.html">
                             SCHEDULE
                         </a>
@@ -78,13 +78,13 @@
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <h3>H/Art Academy</h3>
                 <ul class="uk-nav uk-nav-default">
-                    <li class="uk-active">
+                    <li>
                         <a href="index.html">Home</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>
                     </li>
-                    <li>
+                    <li class="uk-active">
                         <a href="schedule.html">Schedule</a>
                     </li>
                     <li>
@@ -127,48 +127,105 @@
                 </div>
             </div>
         </div>
-        <!-- main card -->
-        <div class="uk-section uk-section-muted uk-padding-remove" uk-height-viewport="expand: true" style="min-height: 900px;">
-            <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center uk-height-1-1 squarelogo-container" uk-grid>
-                <div class="uk-width-1-1">
-                    <div class="uk-background-cover uk-light uk-height-1-1 uk-flex uk-flex-center uk-flex-middle tint" style="background-image: url(data/academy_003.jpg);">
-                        <img class="square-logo" src="data/SQUARELOGO-vector.svg">
-                    </div>
+        <!-- content -->
+        <div class="uk-section page-content uk-padding-remove uk-margin-medium-top" uk-height-viewport="expand: true" style="min-height: 900px;">
+            <div class="page-title">
+                <h2>
+                    SCHEDULE
+                </h2>
+            </div>
+            <div class="uk-grid-collapse uk-child-width-expand@s" uk-grid>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">MON</h4>
+                    <ul class="uk-list uk-list-divider" id="monday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">TUE</h4>
+                    <ul class="uk-list uk-list-divider" id="tuesday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">WED</h4>
+                    <ul class="uk-list uk-list-divider" id="wednesday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">THU</h4>
+                    <ul class="uk-list uk-list-divider" id="thursday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">FRI</h4>
+                    <ul class="uk-list uk-list-divider" id="friday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">SAT</h4>
+                    <ul class="uk-list uk-list-divider" id="saturday">
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">SUN</h4>
+                    <ul class="uk-list uk-list-divider" id="sunday">
+                    </ul>
                 </div>
             </div>
-        </div>
-        <!-- other cards -->
-        <div class="uk-section uk-padding-remove">
-            <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
-                <a class="uk-height-medium uk-width-1-2@s uk-width-1-3@m uk-width-1-5@l uk-link-reset" href="about.html">
-                    <div class="uk-background-cover uk-light uk-height-1-1 uk-flex uk-flex-center uk-flex-middle tint" style="background-image: url(data/group-photo-1.jpg);">
-                        <p class="uk-button uk-button-text intro-title">ABOUT US</p>
-                    </div>
-                </a>
-                <a class="uk-height-medium uk-width-1-2@s uk-width-1-3@m uk-width-1-5@l uk-link-reset" href="schedule.html">
-                    <div class="uk-background-cover uk-light uk-height-1-1 uk-flex uk-flex-center uk-flex-middle tint" style="background-image: url(data/class-photo-001.jpg);">
-                        <p class="uk-button uk-button-text intro-title">SCHEDULE</p>
-                    </div>
-                </a>
-                <a class="uk-height-medium uk-width-1-1@s uk-width-1-3@m uk-width-1-5@l uk-link-reset" href="orkas.html">
-                    <div class="uk-background-cover uk-light uk-height-1-1 uk-flex uk-flex-center uk-flex-middle tint" style="background-image: url(data/orkas-001.jpg);">
-                        <p class="uk-button uk-button-text intro-title">ORKAS PROJECT</p>
-                    </div>
-                </a>
-                <a class="uk-height-medium uk-width-1-2@s uk-width-2-3@m uk-width-1-5@l uk-link-reset" href="contact.html">
-                    <div class="uk-background-cover uk-height-1-1 uk-flex uk-flex-center uk-flex-middle">
-                        <p class="uk-button uk-button-text intro-title">CONTACT</p>
-                    </div>
-                </a>
-                <a class="uk-height-medium uk-width-1-2@s uk-width-1-3@m uk-width-1-5@l uk-link-reset" href="art.html">
-                    <div class="uk-background-cover uk-light uk-height-1-1 uk-flex uk-flex-center uk-flex-middle tint" style="background-image: url(data/academy_006.jpg);">
-                        <p class="uk-button uk-button-text intro-title">FEATURED ARTIST</p>
-                    </div>
-                </a>
+            <div class="uk-grid-collapse uk-child-width-expand@s" uk-grid>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s uk-padding-right">
+                    <h4 class="schedule-title">LEGEND</h4>
+                    <p></p>
+                    <span class="morning uk-padding-remove uk-margin-remove">&nbsp;&nbsp;Morning&nbsp;&nbsp;</span>
+                    <span class="noon uk-padding-remove uk-margin-remove">&nbsp;&nbsp;Afternoon&nbsp;&nbsp;</span>
+                    <span class="evening uk-padding-remove uk-margin-remove">&nbsp;&nbsp;Evening</span>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">BASIC</h4>
+                    <p>
+                        For all levels, self defense and basic techniques 13yrs+
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">REGULAR</h4>
+                    <p>
+                        Variations of advanced Jiu Jitsu techniques 13yrs+
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">FUNDAMENTAL</h4>
+                    <p>
+                        Basic notions and movements for Jiu Jitsu 13yrs+
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">MONTHLY TECH</h4>
+                    <p>
+                        Monthly techniques with assistant instructors. Changes every month
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">WORK N' PLAY</h4>
+                    <p>
+                        Cardio, strength & conditioning
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">KIDS JIU JITSU</h4>
+                    <p>
+                        Basic Jiu Jitsu techniques, self defense and games for children, from 4yrs to 13yrs
+                    </p>
+                </div>
+                <div class="uk-width-1-4@l uk-width-1-3@m uk-width-1-2@s">
+                    <h4 class="schedule-title">KIDS TAEKWONDO</h4>
+                    <p>
+                        Competitive and self defense Taekwondo, from 6yrs to 14yrs
+                    </p>
+                </div>
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
         <script src="js/firebase.js"></script>
         <script src="js/announcement.js"></script>
+        <script src="js/schedule.js"></script>
     </body>
 </html>

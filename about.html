@@ -21,12 +21,12 @@
             <div class="uk-navbar-right">
                 <!-- nav desktop -->
                 <ul class="uk-navbar-nav uk-visible@l">
-                    <li class="uk-active">
+                    <li>
                         <a href="index.html">
                             HOME
                         </a>
                     </li>
-                    <li>
+                    <li class="uk-active">
                         <a class="uk-button uk-button-text" href="about.html">
                             ABOUT US
                         </a>
@@ -78,10 +78,10 @@
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <h3>H/Art Academy</h3>
                 <ul class="uk-nav uk-nav-default">
-                    <li class="uk-active">
+                    <li>
                         <a href="index.html">Home</a>
                     </li>
-                    <li>
+                    <li class="uk-active">
                         <a href="about.html">About</a>
                     </li>
                     <li>
@@ -101,11 +101,30 @@
                         <a class="khmer" href="#">ភាសាខ្មែរ</a>
                     </li>
                     <li class="uk-flex uk-flex-around uk-margin-small-top">
+                        <a href="#modal-announcement" uk-toggle uk-icon="bell"></a>
+                        <div class="uk-margin-large-left"></div>
                         <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
+                        <div class="uk-margin-large-left"></div>
                         <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
+                        <div class="uk-margin-large-left"></div>
                         <a href="terminal.html" uk-icon="sign-in"></a>
                     </li>
                 </ul>
+            </div>
+        </div>
+        <!-- modal announcement -->
+        <div id="modal-announcement" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-header uk-padding">
+                    <h2 class="uk-modal-title" id="announcement-title">ANNOUNCEMENT</h2>
+                </div>
+                <div id="announcement-body" class="uk-modal-body" uk-overflow-auto>
+                    <!-- received data from firebase will appear here -->
+                </div>
+                <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-modal-close" type="button" id="announcement-close">CLOSE</button>
+                </div>
             </div>
         </div>
         <!-- content -->
@@ -196,5 +215,8 @@
                 </div>
             </div>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script src="js/firebase.js"></script>
+        <script src="js/announcement.js"></script>
     </body>
 </html>
