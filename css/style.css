@@ -27,12 +27,18 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     border-bottom: 2px solid #777;
 }
-.schedule-header-wrapper {
+.heading-title {
+    margin: 0;
+    padding: 0 0 0 6px;
+    border-left: 12px solid #ddd;
+    background-color: #f5f5f5;
+}
+.memb-header-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.schedule-header-wrapper h3 {
+.memb-header-wrapper h3 {
     margin: 0;
     padding: 0;
 }
@@ -42,17 +48,8 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     max-width: 1600px;
     margin: 0 auto;
 }
-.slideshow-margin {
-    margin-right: 40px;
-}
-.about-container {
-    display: flex;
-    align-items: center;
-}
-.schedule-title {
-    margin-top: 10px;
-    padding: 0 0 0 10px;
-    background-color: #eee;
+.map-container {
+    min-height: 300px;
 }
 @media only screen and (max-width: 1601px) {
     .page-content {
@@ -62,10 +59,6 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
 @media only screen and (max-width: 1024px) {
     .page-content {
         max-width: 960px;
-    }
-    .slideshow-margin {
-        margin-right: 0;
-        margin-bottom: 50px;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -101,6 +94,9 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
 @media only screen and (max-width: 330px) {
     .page-content {
         max-width: 300px;
+    }
+    .map-container {
+        min-height: 200px;
     }
 }
 
@@ -141,16 +137,20 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (min-width: 1200px) {
     .enlarge-on-hover-small {
+        z-index: 1;
         transition: transform 0.35s;
     }
     .enlarge-on-hover-small:hover {
+        z-index: 10;
         transform: scale(1.035);
         transition: transform 0.35s;
     }
-    .enlarge-on-hover-medium {
+    .enlarge-on-hover-medium, .merch-hover > img {
+        z-index: 1;
         transition: transform 0.35s;
     }
-    .enlarge-on-hover-medium:hover {
+    .enlarge-on-hover-medium:hover, .merch-hover:hover > img {
+        z-index: 1;
         transform: scale(1.1);
         transition: transform 0.35s;
     }

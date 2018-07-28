@@ -1,0 +1,154 @@
+{
+    "nav" : {
+        "nav-desktop" : {
+            "home" : "HOME",
+            "about-us" : "ABOUT US",
+            "schedule" : "SCHEDULE",
+            "membership" : "MEMBERSHIP",
+            "merchandise" : "MERCHANDISE",
+            "contact" : "CONTACT",
+            "language" : "ភាសាខ្មែរ"
+        },
+        "nav-tablet" : {
+            "home" : "Home",
+            "about-us" : "About us",
+            "schedule" : "Schedule",
+            "membership" : "Membership",
+            "merchandise" : "Merchandise",
+            "contact" : "Contact",
+            "language" : "ភាសាខ្មែរ"
+        }
+    },
+    "modal-announcement" : {
+        "announcement-title" : "ANNOUNCEMENT"
+    },
+    "page-title" : {
+        "about-us" : "ABOUT US",
+        "schedule" : "SCHEDULE",
+        "membership" : "MEMBERSHIP",
+        "merchandise" : "MERCHANDISE",
+        "contact" : "CONTACT"
+    },
+    "about" : {
+        "who-are-we" : {
+            "title" : "WHO ARE WE?",
+            "content" : "H/Art Academy is Cambodia’s first and only dedicated Gracie Jiu Jitsu academy and is the Cambodian representative for Axis Jiu Jitsu, Japan. We are are proud to represent the Rickson Gracie lineage here in Southeast Asia and strive to make this gentle art accessible to anyone regardless of social class, gender or age.<br><br>We started as a small group known as BJJ Cambodia, training in various locations across the city and together we sought to grow the popularity of the martial art within the kingdom. As the group grew, so did our desire to dedicate ourselves to the art. We wanted to build a place where people from all walks of life, Cambodian or foreign, could come and train together – no ego, no pride.<br><br>Today we have found a place to call home – H/Art Academy Jiu Jitsu. We see ourselves as a community gym, where families and friends can get together in a safe environment to learn and grow through the practice of Jiu Jitsu, a creative space where we can all let our passion for this art, flourish.<br><br>The academy focuses on grappling, both as a sport and as a form of self-defense. Whether you want to get a good physical workout; learn a new martial art for your own betterment; or aim to become a world champion, we want everyone to train so we’ve structured our classes to accommodate every level and all age groups.<br><br>We truly believe in the power Jiu Jitsu has to change people’s lives and it makes us confident that we can do the same for people here."
+        },
+            "the-gentle-art" : {
+            "title" : "THE 'GENTLE' ART",
+            "content" : "Jiu Jitsu is a ground based martial art that focuses on the control of your opponents body, using leverage and techniques to apply submission holds such as chokes and joint locks, without the use of strikes. Jiu Jitsu was developed to help smaller and weaker people defend themselves against larger and stronger opponents.<br><br>The none-striking nature of Jiu Jitsu puts greater emphasis on the importance of technique, and therefore an emphasis on the mental aspect of the martial art. This has widely allowed the gentle art to be considered as ‘the triumph of human intelligence over brute strength’."
+        },
+        "for-women" : {
+            "title" : "FOR WOMEN",
+            "content" : "Jiu Jitsu is a great physical outlet, but it is also an effective form of self-defense for women. While we often hear that most fights end on the ground, it's often overlooked that most sexual assaults also end on the ground. For this reason, we believe that Jiu Jitsu is an effective tool to help women prepare for any situation. It is a martial art that more often than not, puts you in uncomfortable situations and teaches you to stay calm under pressure while finding your escape route. Through the practice of Jiu Jitsu, women can continuously put into practice the techniques they have learned, against a partner, using as little or as much of their strength, letting them see the effectiveness of Jiu Jitsu first hand. This in turn, allows women to sharpen their minds, skills and reflexes."
+        },
+        "for-kids" : {
+            "title" : "FOR KIDS",
+            "content" : "It's never too early to start learning Jiu Jitsu. Too often do we hear stories about bullying in and out of school and the lasting effects it can have on children. As a form of self-defense, Jiu Jitsu is a great way for children to learn about standing up for themselves, but also about respecting yourself and others.<br><br>Through the practice of Jiu Jitsu, children learn various valuable lessons which you can expect they will apply outside of the academy. From being more social and learning to overcome failures, to gaining confidence and being more disciplined. Children and parents can only stand to benefit from allowing their children to take up this gentle art."
+        }
+    },
+    "schedule" : {
+        "date" : {
+            "mon" : "MON",
+            "tue" : "TUE",
+            "wed" : "WED",
+            "thu" : "THU",
+            "fri" : "FRI",
+            "sat" : "SAT",
+            "sun" : "SUN"
+        },
+        "legend" : {
+            "legend" : {
+                "title" : "LEGEND",
+                "content" : {
+                    "morning" : "Morning",
+                    "noon" : "Noon",
+                    "evening" : "Evening"
+                }
+            },
+            "basic" : {
+                "title" : "BASIC",
+                "content" : "For all levels, self defense and basic techniques 13yrs+"
+            },
+            "regular" : {
+                "title" : "REGULAR",
+                "content" : "Variations of advanced Jiu Jitsu techniques 13yrs+"
+            },
+            "fundamental" : {
+                "title" : "FUNDAMENTAL",
+                "content" : "Basic notions and movements for Jiu Jitsu 13yrs+"
+            },
+            "monthly-tech" : {
+                "title" : "MONTHLY TECH",
+                "content" : "Monthly techniques with assistant instructors. Changes every month"
+            },
+            "work-n-play" : {
+                "title" : "WORK N' PLAY",
+                "content" : "Cardio, strength & conditioning"
+            },
+            "kids-jj" : {
+                "title" : "KIDS JIU JITSU",
+                "content" : "Basic Jiu Jitsu techniques, self defense and games for children, from 4yrs to 13yrs"
+            },
+            "kids-tkd" : {
+                "title" : "KIDS TAEKWONDO",
+                "content" : "Competitive and self defense Taekwondo, from 6yrs to 14yrs"
+            }
+        }
+    },
+    "membership" : {
+        "pricing-1" : {
+            "price" : "$65",
+            "per" : "|month",
+            "content" : "Any 6 classes per month. Valid from the first to the last day of the month"
+        },
+        "pricing-2" : {
+            "price" : "$80",
+            "per" : "|month",
+            "content" : "Any 12 classes per month. Valid from the first to the last day of the month"
+        },
+        "pricing-3" : {
+            "price" : "$95",
+            "per" : "|month",
+            "content" : "All classes per month. Valid from the first to the last day of the month"
+        },
+        "pricing-1" : {
+            "price" : "$15",
+            "per" : "|day",
+            "content" : "1-day pass for all classes"
+        },
+        "pricing-1" : {
+            "price" : "$12",
+            "per" : "|class",
+            "content" : "Single (1) class"
+        },
+        "pricing-1" : {
+            "price" : "$45",
+            "per" : "|class",
+            "content" : "1-hour private class"
+        },
+        "pricing-1" : {
+            "price" : "$40",
+            "per" : "|week",
+            "content" : "For travelling Jiu Jitsu practitioners. One week of unlimited training. Can only be purchased once"
+        }
+    },
+    "contact" : {
+        "address" : {
+            "title" : "Address:",
+            "content" : "Grey gate, 1st Floor, House 113, Street 105, Corner Street 300, Phnom Penh, Cambodia",
+            "phone" : "+855 10 406 748"
+        },
+        "reference-point" : {
+            "title" : "Reference points:",
+            "content" : "The academy on the first floor, above 2 shops on the corner of Street 105 and 300. 2 Smart Spot and Pink Nail Salon. The front gate is located on the left side behind the True Money Signage.<br><br>Please ring doorbell button on door code system at the 2nd gate"
+        },
+        "message" : {
+            "title" : "Send us a message",
+            "name" : "Name",
+            "email" : "Email",
+            "message" : "Message",
+            "send" : "SEND"
+        }
+    }
+}
