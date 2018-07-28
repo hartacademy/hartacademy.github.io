@@ -1,14 +1,8 @@
 /* ui kit override */
-.squarelogo-container {
-    min-height: 600px;
-}
 .uk-height-medium {
   height: 300px;
 }
-/* nav */
-.square-logo {
-    height: 20em;
-}
+
 /* font */
 * {
     font-family: 'Open Sans', sans-serif !important;
@@ -17,7 +11,79 @@
     font-family: 'Content', cursive !important;
     letter-spacing: normal !important;
 }
+.page-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.page-title h2 {
+    color: #777;
+    margin: 0 0 10px 0;
+    letter-spacing: 4px;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 2px solid #777;
+}
 
+/* container */
+.page-content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.slideshow-margin {
+    margin-right: 40px;
+}
+.about-container {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 1024px) {
+    .page-content {
+        max-width: 960px;
+    }
+    .slideshow-margin {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .page-content {
+        max-width: 700px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .page-content {
+        max-width: 600px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .page-content {
+        max-width: 540px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .page-content {
+        max-width: 380px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .page-content {
+        max-width: 340px;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .page-content {
+        max-width: 300px;
+    }
+}
+
+/* media */
+.square-logo {
+    height: 20em;
+}
+.main-logo {
+    height: 60px;
+}
 .tint {
     background-color: rgba(0, 0, 0, 0.35);
     background-blend-mode: multiply;
@@ -31,8 +97,8 @@
 .intro-title {
     font-size: 2em;
 }
-.main-logo {
-    height: 60px;
+.squarelogo-container {
+    min-height: 600px;
 }
 @media only screen and (max-width: 1024px) {
     .squarelogo-container {

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>H/Art Jiu Jitsu Academy | Cambodia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Content:400,700|Open+Sans:400,700" rel="stylesheet">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+        <nav class="uk-navbar-container" uk-navbar="mode: click" style="z-index: 980;" uk-sticky="bottom: #offset">
+            <div class="uk-navbar-left">
+                <a href="index.html" class="uk-navbar-item uk-logo">
+                    <img class="main-logo" src="data/main-logo.svg">
+                </a>
+            </div>
+            <div class="uk-navbar-right">
+                <!-- nav desktop -->
+                <ul class="uk-navbar-nav uk-visible@l">
+                    <li class="uk-active">
+                        <a href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="about.html">
+                            ABOUT US
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="schedule.html">
+                            SCHEDULE
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="membership.html">
+                            MEMBERSHIP
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="merchandise.html">
+                            MERCHANDISE
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="contact.html">
+                            CONTACT
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="#">
+                            ភាសាខ្មែរ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="#modal-announcement" uk-toggle uk-icon="bell">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <!-- nav tablet -->
+                <ul class="uk-navbar-nav uk-hidden@l">
+                    <li>
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="menu" uk-toggle="target: #offcanvas-flip"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- off canvas -->
+        <div id="offcanvas-flip" uk-offcanvas="flip: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>H/Art Academy</h3>
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a href="membership.html">Membership</a>
+                    </li>
+                    <li>
+                        <a href="merchandise.html">Merchandise</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                        <a class="khmer" href="#">ភាសាខ្មែរ</a>
+                    </li>
+                    <li class="uk-flex uk-flex-around uk-margin-small-top">
+                        <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
+                        <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
+                        <a href="terminal.html" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="uk-section page-content" uk-height-viewport="expand: true" style="min-height: 900px;">
+            <div class="page-title">
+                <h2>
+                    ABOUT US
+                </h2>
+            </div>
+            <div class="uk-grid-collapse uk-child-width-expand@s uk-height-1-1" uk-grid>
+                <div class="uk-width-1-2@l uk-width-1-1@m">
+                    <div class="uk-position-relative uk-position-center-left uk-visible-toggle uk-light" uk-slideshow="animation: pull; autoplay: true; autoplay-interval: 3000">
+                        <ul class="uk-slideshow-items slideshow-margin">
+                            <li>
+                                <img src="data/group-photo-1.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/class-photo-002.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/academy_001.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/academy_002.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/orkas-002.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/class-photo-001.jpg" alt="" uk-cover>
+                            </li>
+                            <li>
+                                <img src="data/academy_003.jpg" alt="" uk-cover>
+                            </li>
+                        </ul>
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                    </div>
+                </div>
+                <div class="uk-width-1-2@l uk-width-1-1@m about-container">
+                    <ul class="" uk-accordion="collapsible: false">
+                        <li>
+                            <a class="uk-accordion-title uk-background-muted" href="#">WHO ARE WE?</a>
+                            <div class="uk-accordion-content">
+                                <p>
+                                    H/Art Academy is Cambodia’s first and only dedicated Gracie Jiu Jitsu academy and is the Cambodian representative for Axis Jiu Jitsu, Japan. We are are proud to represent the Rickson Gracie lineage here in Southeast Asia and strive to make this gentle art accessible to anyone regardless of social class, gender or age.
+                                    <br><br>
+                                    We started as a small group known as BJJ Cambodia, training in various locations across the city and together we sought to grow the popularity of the martial art within the kingdom. As the group grew, so did our desire to dedicate ourselves to the art. We wanted to build a place where people from all walks of life, Cambodian or foreign, could come and train together – no ego, no pride.
+                                    <br><br>
+                                    Today we have found a place to call home – H/Art Academy Jiu Jitsu. We see ourselves as a community gym, where families and friends can get together in a safe environment to learn and grow through the practice of Jiu Jitsu, a creative space where we can all let our passion for this art, flourish.
+                                    <br><br>
+                                    The academy focuses on grappling, both as a sport and as a form of self-defense. Whether you want to get a good physical workout; learn a new martial art for your own betterment; or aim to become a world champion, we want everyone to train so we’ve structured our classes to accommodate every level and all age groups.
+                                    <br><br>
+                                    We truly believe in the power Jiu Jitsu has to change people’s lives and it makes us confident that we can do the same for people here.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title uk-background-muted" href="#">THE 'GENTLE' ART</a>
+                            <div class="uk-accordion-content">
+                                <p>
+                                    Jiu Jitsu is a ground based martial art that focuses on the control of your opponents body, using leverage and techniques to apply submission holds such as chokes and joint locks, without the use of strikes. Jiu Jitsu was developed to help smaller and weaker people defend themselves against larger and stronger opponents.
+                                    <br><br>
+                                    The none-striking nature of Jiu Jitsu puts greater emphasis on the importance of technique, and therefore an emphasis on the mental aspect of the martial art. This has widely allowed the gentle art to be considered as ‘the triumph of human intelligence over brute strength’.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title uk-background-muted" href="#">FOR WOMEN</a>
+                            <div class="uk-accordion-content">
+                                <p>
+                                    Jiu Jitsu is a great physical outlet, but it is also an effective form of self-defense for women. While we often hear that most fights end on the ground, it's often overlooked that most sexual assaults also end on the ground. For this reason, we believe that Jiu Jitsu is an effective tool to help women prepare for any situation. It is a martial art that more often than not, puts you in uncomfortable situations and teaches you to stay calm under pressure while finding your escape route. Through the practice of Jiu Jitsu, women can continuously put into practice the techniques they have learned, against a partner, using as little or as much of their strength, letting them see the effectiveness of Jiu Jitsu first hand. This in turn, allows women to sharpen their minds, skills and reflexes.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title uk-background-muted" href="#">FOR KIDS</a>
+                            <div class="uk-accordion-content">
+                                <p>
+                                    It's never too early to start learning Jiu Jitsu. Too often do we hear stories about bullying in and out of school and the lasting effects it can have on children. As a form of self-defense, Jiu Jitsu is a great way for children to learn about standing up for themselves, but also about respecting yourself and others.
+                                    <br><br>
+                                    Through the practice of Jiu Jitsu, children learn various valuable lessons which you can expect they will apply outside of the academy. From being more social and learning to overcome failures, to gaining confidence and being more disciplined. Children and parents can only stand to benefit from allowing their children to take up this gentle art.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
