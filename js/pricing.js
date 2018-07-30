@@ -5,8 +5,5 @@ firebase.database().ref('membership/').once('value').then(function(snapshot) {
         
         var pricing = document.createTextNode(id.price);
         var description = document.createTextNode(id.description);
-        
-        console.log(pricing);
-        console.log(description);
     });
 });
