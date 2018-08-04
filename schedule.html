@@ -20,9 +20,9 @@
             </div>
             <div class="uk-navbar-right">
                 <!-- nav desktop -->
-                <ul class="uk-navbar-nav uk-visible@l">
+                <ul class="uk-navbar-nav uk-visible@l english">
                     <li>
-                        <a href="index.html">
+                        <a class="uk-button uk-button-text" href="index.html">
                             HOME
                         </a>
                     </li>
@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li class="uk-active">
-                        <a class="uk-button uk-button-text" href="schedule.html">
+                        <a href="schedule.html">
                             SCHEDULE
                         </a>
                     </li>
@@ -52,7 +52,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="#">
+                        <a class="uk-button uk-button-text khmer" onclick="langChange()">
                             ភាសាខ្មែរ
                         </a>
                     </li>
@@ -60,12 +60,59 @@
                         <a class="uk-button uk-button-text" href="#modal-announcement" uk-toggle uk-icon="bell">
                         </a>
                     </li>
+                    <li class="uk-hidden">
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <ul class="uk-navbar-nav uk-visible@l uk-hidden khmer">
                     <li>
+                        <a class="uk-button uk-button-text khmer" href="index.html">
+                            ទំព័រដើម
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="about.html">
+                            អំពីយើង
+                        </a>
+                    </li>
+                    <li class="uk-active">
+                        <a class="khmer" href="schedule.html">
+                            កាលវិភាគ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="membership.html">
+                            សមាជិក
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="merchandise.html">
+                            ទំនិញ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="contact.html">
+                            ទំនាក់ទំនង
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" onclick="langChange()">
+                            ENGLISH
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="#modal-announcement" uk-toggle uk-icon="bell">
+                        </a>
+                    </li>
+                    <li class="uk-hidden">
                         <a href="terminal.html" class="uk-button uk-button-text" uk-icon="sign-in"></a>
                     </li>
                 </ul>
                 <!-- nav tablet -->
                 <ul class="uk-navbar-nav uk-hidden@l">
+                    <li>
+                        <a href="#modal-announcement" uk-toggle uk-icon="bell"></a>
+                    </li>
                     <li>
                         <a href="terminal.html" class="uk-button uk-button-text" uk-icon="menu" uk-toggle="target: #offcanvas-flip"></a>
                     </li>
@@ -77,14 +124,14 @@
             <div class="uk-offcanvas-bar">
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
                 <h3>H/Art Academy</h3>
-                <ul class="uk-nav uk-nav-default">
-                    <li>
+                <ul class="uk-nav uk-nav-default english">
+                    <li class="uk-active">
                         <a href="index.html">Home</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>
                     </li>
-                    <li class="uk-active">
+                    <li>
                         <a href="schedule.html">Schedule</a>
                     </li>
                     <li>
@@ -98,16 +145,45 @@
                     </li>
                     <li class="uk-nav-divider"></li>
                     <li>
-                        <a class="khmer" href="#">ភាសាខ្មែរ</a>
+                        <a class="khmer" onclick="langChange()">ភាសាខ្មែរ</a>
                     </li>
                     <li class="uk-flex uk-flex-around uk-margin-small-top">
-                        <a href="#modal-announcement" uk-toggle uk-icon="bell"></a>
-                        <div class="uk-margin-large-left"></div>
                         <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
                         <div class="uk-margin-large-left"></div>
                         <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
                         <div class="uk-margin-large-left"></div>
-                        <a href="terminal.html" uk-icon="sign-in"></a>
+                        <a class="uk-hidden" href="terminal.html" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <ul class="uk-nav uk-nav-default uk-hidden khmer">
+                    <li class="uk-active">
+                        <a class="khmer" href="index.html">ទំព័រដើម</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="about.html">អំពីយើង</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="schedule.html">កាលវិភាគ</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="membership.html">សមាជិក</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="merchandise.html">ទំនិញ</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="contact.html">ទំនាក់ទំនង</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                        <a onclick="langChange()">English</a>
+                    </li>
+                    <li class="uk-flex uk-flex-around uk-margin-small-top">
+                        <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a class="uk-hidden" href="terminal.html" uk-icon="sign-in"></a>
                     </li>
                 </ul>
             </div>
@@ -223,6 +299,7 @@
                 </div>
             </div>
         </div>
+        <script src="js/about.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
         <script src="js/firebase.js"></script>
         <script src="js/announcement.js"></script>
