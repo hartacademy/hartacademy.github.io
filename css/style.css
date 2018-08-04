@@ -118,7 +118,7 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.35s;
 }
 .intro-title {
-    font-size: 2em;
+    font-size: 1.75em;
 }
 .squarelogo-container {
     min-height: 600px;
@@ -151,7 +151,7 @@ a, p, span, h1, h2, h3, h4, h5, h6 {
     }
     .enlarge-on-hover-medium:hover, .merch-hover:hover > img {
         z-index: 1;
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: transform 0.35s;
     }
 }
