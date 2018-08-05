@@ -12,7 +12,7 @@
         <script src="js/uikit-icons.min.js"></script>
     </head>
     <body>
-        <nav class="uk-navbar-container" uk-navbar="mode: click" style="z-index: 980;" uk-sticky="bottom: #offset">
+        <nav class="uk-navbar-container" uk-navbar="mode: click" style="z-index: 980;" uk-sticky="bottom: #offset" id="langkh">
             <div class="uk-navbar-left">
                 <a href="index.html" class="uk-navbar-item uk-logo">
                     <img class="main-logo" src="data/main-logo.svg">
@@ -66,32 +66,32 @@
                 </ul>
                 <ul class="uk-navbar-nav uk-visible@l uk-hidden khmer">
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="index.html">
+                        <a class="uk-button uk-button-text khmer" href="index.html#langkh">
                             ទំព័រដើម
                         </a>
                     </li>
                     <li class="uk-active">
-                        <a class="khmer" href="about.html">
+                        <a class="khmer" href="about.html#langkh">
                             អំពីយើង
                         </a>
                     </li>
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="schedule.html">
+                        <a class="uk-button uk-button-text khmer" href="schedule.html#langkh">
                             កាលវិភាគ
                         </a>
                     </li>
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="membership.html">
+                        <a class="uk-button uk-button-text khmer" href="membership.html#langkh">
                             សមាជិក
                         </a>
                     </li>
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="merchandise.html">
+                        <a class="uk-button uk-button-text khmer" href="merchandise.html#langkh">
                             ទំនិញ
                         </a>
                     </li>
                     <li>
-                        <a class="uk-button uk-button-text khmer" href="contact.html">
+                        <a class="uk-button uk-button-text khmer" href="contact.html#langkh">
                             ទំនាក់ទំនង
                         </a>
                     </li>
@@ -156,23 +156,23 @@
                     </li>
                 </ul>
                 <ul class="uk-nav uk-nav-default uk-hidden khmer">
+                    <li>
+                        <a class="khmer" href="index.html#langkh">ទំព័រដើម</a>
+                    </li>
                     <li class="uk-active">
-                        <a class="khmer" href="index.html">ទំព័រដើម</a>
+                        <a class="khmer" href="about.html#langkh">អំពីយើង</a>
                     </li>
                     <li>
-                        <a class="khmer" href="about.html">អំពីយើង</a>
+                        <a class="khmer" href="schedule.html#langkh">កាលវិភាគ</a>
                     </li>
                     <li>
-                        <a class="khmer" href="schedule.html">កាលវិភាគ</a>
+                        <a class="khmer" href="membership.html#langkh">សមាជិក</a>
                     </li>
                     <li>
-                        <a class="khmer" href="membership.html">សមាជិក</a>
+                        <a class="khmer" href="merchandise.html#langkh">ទំនិញ</a>
                     </li>
                     <li>
-                        <a class="khmer" href="merchandise.html">ទំនិញ</a>
-                    </li>
-                    <li>
-                        <a class="khmer" href="contact.html">ទំនាក់ទំនង</a>
+                        <a class="khmer" href="contact.html#langkh">ទំនាក់ទំនង</a>
                     </li>
                     <li class="uk-nav-divider"></li>
                     <li>
@@ -241,7 +241,13 @@
                         </ul>
                         <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
                         <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-
+                    </div>
+                    <a class="uk-button uk-button-default" href="#modal-media-youtube" uk-toggle style="width: 100%; padding: 20px; margin-top: 20px;">VIDEO</a>
+                    <div id="modal-media-youtube" class="uk-flex-top" uk-modal>
+                        <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical">
+                            <button class="uk-modal-close-outside" type="button" uk-close></button>
+                            <iframe src="https://www.youtube.com/embed/o-oGyJ7iubk" width="560" height="315" frameborder="0" uk-video></iframe>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -336,5 +342,10 @@
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
         <script src="js/firebase.js"></script>
         <script src="js/announcement.js"></script>
+        <script>
+            if (window.location.hash === '#langkh') {
+                langChange();
+            }
+        </script>
     </body>
 </html>
