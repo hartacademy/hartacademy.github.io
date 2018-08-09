@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>H/Art Jiu Jitsu Academy | Cambodia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Content:400,700|Open+Sans:400,700" rel="stylesheet">
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+        <nav class="uk-navbar-container" uk-navbar="mode: click" style="z-index: 980;" uk-sticky="bottom: #offset" id="langkh">
+            <div class="uk-navbar-left">
+                <a href="index.html" class="uk-navbar-item uk-logo">
+                    <img class="main-logo" src="data/main-logo.svg">
+                </a>
+            </div>
+            <div class="uk-navbar-right">
+                <!-- nav desktop -->
+                <ul class="uk-navbar-nav uk-visible@l english">
+                    <li>
+                        <a class="uk-button uk-button-text" href="index.html">
+                            HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="about.html">
+                            ABOUT US
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="schedule.html">
+                            ACADEMY
+                        </a>
+                        <div uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li><a href="schedule.html">SCHEDULE</a></li>
+                                <li><a href="membership.html">MEMBERSHIP</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="merchandise.html">
+                            MERCHANDISE
+                        </a>
+                        <div uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li><a href="merchandise.html">APPAREL</a></li>
+                                <li><a href="artist.html">FEATURED ARTIST</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="uk-active">
+                        <a href="orkas.html">
+                            ORKAS PROJECT
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="contact.html">
+                            CONTACT
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" onclick="langChange()">
+                            ភាសាខ្មែរ
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="#modal-announcement" uk-toggle uk-icon="bell">
+                        </a>
+                    </li>
+                    <li class="uk-hidden">
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <ul class="uk-navbar-nav uk-visible@l uk-hidden khmer">
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="index.html#langkh">
+                            ទំព័រដើម
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="about.html#langkh">
+                            អំពីយើង
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="schedule.html#langkh">
+                            មជ្ឈមណ្ឌល
+                        </a>
+                        <div uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li><a href="schedule.html#langkh" class="khmer">កាលវិភាគ</a></li>
+                                <li><a href="membership.html#langkh" class="khmer">សមាជិក</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="merchandise.html#langkh">
+                            ទំនិញ
+                        </a>
+                        <div uk-dropdown>
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li><a href="merchandise.html#langkh" class="khmer">សំលៀកបំពាក់</a></li>
+                                <li><a href="artist.html#langkh" class="khmer">សិល្បករពិសេស</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="uk-active">
+                        <a class="khmer" href="orkas.html#langkh">
+                            គម្រោង ឱកាស
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text khmer" href="contact.html#langkh">
+                            ទំនាក់ទំនង
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" onclick="langChange()">
+                            ENGLISH
+                        </a>
+                    </li>
+                    <li>
+                        <a class="uk-button uk-button-text" href="#modal-announcement" uk-toggle uk-icon="bell">
+                        </a>
+                    </li>
+                    <li class="uk-hidden">
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <!-- nav tablet -->
+                <ul class="uk-navbar-nav uk-hidden@l">
+                    <li>
+                        <a href="#modal-announcement" uk-toggle uk-icon="bell"></a>
+                    </li>
+                    <li>
+                        <a href="terminal.html" class="uk-button uk-button-text" uk-icon="menu" uk-toggle="target: #offcanvas-flip"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- off canvas -->
+        <div id="offcanvas-flip" uk-offcanvas="flip: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>H/Art Academy</h3>
+                <ul class="uk-nav uk-nav-default english">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="schedule.html">Schedule</a>
+                    </li>
+                    <li>
+                        <a href="membership.html">Membership</a>
+                    </li>
+                    <li class="uk-active">
+                        <a href="orkas.html">Orkas Project</a>
+                    </li>
+                    <li>
+                        <a href="merchandise.html">Merchandise</a>
+                    </li>
+                    <li>
+                        <a href="artist.html">Featured Artist</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                        <a class="khmer" onclick="langChange()">ភាសាខ្មែរ</a>
+                    </li>
+                    <li class="uk-flex uk-flex-around uk-margin-small-top">
+                        <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a class="uk-hidden" href="terminal.html" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+                <ul class="uk-nav uk-nav-default uk-hidden khmer">
+                    <li>
+                        <a class="khmer" href="index.html#langkh">ទំព័រដើម</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="about.html#langkh">អំពីយើង</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="schedule.html#langkh">កាលវិភាគ</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="membership.html#langkh">សមាជិក</a>
+                    </li>
+                    <li class="uk-active">
+                        <a class="khmer" href="orkas.html#langkh">គម្រោង ឱកាស</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="merchandise.html#langkh">ទំនិញ</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="artist.html#langkh">សិល្បករពិសេស</a>
+                    </li>
+                    <li>
+                        <a class="khmer" href="contact.html#langkh">ទំនាក់ទំនង</a>
+                    </li>
+                    <li class="uk-nav-divider"></li>
+                    <li>
+                        <a onclick="langChange()">English</a>
+                    </li>
+                    <li class="uk-flex uk-flex-around uk-margin-small-top">
+                        <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
+                        <div class="uk-margin-large-left"></div>
+                        <a class="uk-hidden" href="terminal.html" uk-icon="sign-in"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- modal announcement -->
+        <div id="modal-announcement" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-header uk-padding">
+                    <h2 class="uk-modal-title" id="announcement-title">ANNOUNCEMENT</h2>
+                </div>
+                <div id="announcement-body" class="uk-modal-body" uk-overflow-auto>
+                    <!-- received data from firebase will appear here -->
+                </div>
+                <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-modal-close" type="button" id="announcement-close">CLOSE</button>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="uk-section page-content uk-padding-remove uk-margin-medium-top" uk-height-viewport="expand: true" style="min-height: 900px;">
+            <div class="page-title">
+                <h2 class="english">
+                    ORKAS PROJECT
+                </h2>
+                <h2 class="khmer uk-hidden">
+                    គម្រោង ឱកាស
+                </h2>
+            </div>
+            <div class="uk-grid-medium uk-margin-medium-top uk-margin-medium-bottom" uk-grid>
+                <div class="uk-width-1-1 uk-flex uk-flex-column uk-flex-center uk-flex-middle">
+                    <h4><i>UNDER CONSTRUCTION</i></h4>
+                    <h4 uk-icon="icon: nut; ratio: 2"></h4>
+                </div>
+            </div>
+        </div>
+        <script src="js/artist.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script src="js/firebase.js"></script>
+        <script src="js/announcement.js"></script>
+        <script>
+            if (window.location.hash === '#langkh') {
+                langChange();
+            }
+        </script>
+    </body>
+</html>
