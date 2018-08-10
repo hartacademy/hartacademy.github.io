@@ -1,3 +1,49 @@
+// Announcement
+
+// Ref firebase
+var announcementRef = firebase.database().ref('posts/announcement');
+// Submit Btn pressed
+document.getElementById('announcementForm').addEventListener('submit', submitAnnouncement);
+// Submit announcement
+function submitAnnouncement(e){
+  e.preventDefault();
+
+  // Get values
+  var author = getInputVal('annAuthor');
+  var content = getInputVal('annDetail');
+  var title = getInputVal('annTitle');
+  var created = new Date().toLocaleString();
+
+  // Save announcement
+  saveAnnouncement(author, content, title, created);
+/*
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },5000);
+*/
+  // Clear form
+  document.getElementById('announcementForm').reset();
+}
+// Function to get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
+}
+// Save announcement data to firebase
+function saveAnnouncement(author, content, title, created){
+  announcementRef.set({
+    author: author,
+    content: content,
+    title: title,
+    created: created
+  });
+};
+
+// Schedule
+
 // Pull data from firebase and paste into placeholder
 firebase.database().ref('schedule/monday/').once('value').then(function(snapshot) {
     snapshot.forEach(function(userSnapshot) {
@@ -12,13 +58,15 @@ firebase.database().ref('schedule/monday/').once('value').then(function(snapshot
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftMon";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -32,6 +80,7 @@ firebase.database().ref('schedule/monday/').once('value').then(function(snapshot
         createMainDiv.appendChild(createSelectDiv);
 
         document.getElementById("monday").appendChild(createMainDiv);
+        console.log(createMainDiv);
     });
 });
 firebase.database().ref('schedule/tuesday/').once('value').then(function(snapshot) {
@@ -41,19 +90,21 @@ firebase.database().ref('schedule/tuesday/').once('value').then(function(snapsho
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right tuesday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftTue";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -76,19 +127,21 @@ firebase.database().ref('schedule/wednesday/').once('value').then(function(snaps
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right wednesday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftWed";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -111,19 +164,21 @@ firebase.database().ref('schedule/thursday/').once('value').then(function(snapsh
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right thursday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftThu";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -146,19 +201,21 @@ firebase.database().ref('schedule/friday/').once('value').then(function(snapshot
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right friday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftFri";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -181,19 +238,21 @@ firebase.database().ref('schedule/saturday/').once('value').then(function(snapsh
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right saturday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftSat";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -216,19 +275,21 @@ firebase.database().ref('schedule/sunday/').once('value').then(function(snapshot
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right monday";
+        createInput.className = "uk-input uk-margin-small-right saturday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
         createSelectDiv.className = "uk-form-controls";
         var createSelect = document.createElement("select");
-        createSelect.className = "uk-select";
-        createSelect.id = "form-stacked-select";
+        createSelect.className = "uk-select shiftSun";
         var createOptionMorning = document.createElement("option");
+        createOptionMorning.value = "morning";
         var morning = document.createTextNode("Morning");
         var createOptionNoon = document.createElement("option");
+        createOptionNoon.value = "noon";
         var noon = document.createTextNode("Noon");
         var createOptionEvening = document.createElement("option");
+        createOptionEvening.value = "evening";
         var evening = document.createTextNode("Evening");
 
         createOptionMorning.appendChild(morning);
@@ -245,11 +306,155 @@ firebase.database().ref('schedule/sunday/').once('value').then(function(snapshot
     });
 });
 
-// Log newly entered text
-var inputs = document.getElementsByClassName("monday");
+// Push new schedule into firebase
+// Ref firebase
+var scheduleRefMon = firebase.database().ref('schedule/monday');
+var scheduleRefTue = firebase.database().ref('schedule/tuesday');
+var scheduleRefWed = firebase.database().ref('schedule/wednesday');
+var scheduleRefThu = firebase.database().ref('schedule/thursday');
+var scheduleRefFri = firebase.database().ref('schedule/friday');
+var scheduleRefSat = firebase.database().ref('schedule/saturday');
+var scheduleRefSun = firebase.database().ref('schedule/sunday');
+
+var inputsMon = document.getElementsByClassName("monday");
+var shiftMon = document.getElementsByClassName("shiftMon");
+var inputsTue = document.getElementsByClassName("tuesday");
+var shiftTue = document.getElementsByClassName("shiftTue");
+var inputsWed = document.getElementsByClassName("wednesday");
+var shiftWed = document.getElementsByClassName("shiftWed");
+var inputsThu = document.getElementsByClassName("thursday");
+var shiftThu = document.getElementsByClassName("shiftThu");
+var inputsFri = document.getElementsByClassName("friday");
+var shiftFri = document.getElementsByClassName("shiftFri");
+var inputsSat = document.getElementsByClassName("saturday");
+var shiftSat = document.getElementsByClassName("shiftSat");
+var inputsSun = document.getElementsByClassName("sunday");
+var shiftSun = document.getElementsByClassName("shiftSun");
+
 function monSave() {
-    for(var i = 0; i < inputs.length; i++) {
-        console.log(inputs[i].value);
+    scheduleRefMon.remove();
+    for (var i = 0; i < inputsMon.length; i++) {
+        
+        var detail = inputsMon[i].value;
+        var shift = shiftMon[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefMon = scheduleRefMon.push();
+            newScheduleRefMon.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function tueSave() {
+    scheduleRefTue.remove();
+    for (var i = 0; i < inputsTue.length; i++) {
+        
+        var detail = inputsTue[i].value;
+        var shift = shiftTue[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefTue = scheduleRefTue.push();
+            newScheduleRefTue.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function wedSave() {
+    scheduleRefWed.remove();
+    for (var i = 0; i < inputsWed.length; i++) {
+        
+        var detail = inputsWedn[i].value;
+        var shift = shiftWed[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefWed = scheduleRefWed.push();
+            newScheduleRefWed.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function thuSave() {
+    scheduleRefThu.remove();
+    for (var i = 0; i < inputsThu.length; i++) {
+        
+        var detail = inputsThu[i].value;
+        var shift = shiftThu[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefThu = scheduleRefThu.push();
+            newScheduleRefThu.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function friSave() {
+    scheduleRefFri.remove();
+    for (var i = 0; i < inputsFri.length; i++) {
+        
+        var detail = inputsFri[i].value;
+        var shift = shiftFri[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefFri = scheduleRefFri.push();
+            newScheduleRefFri.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function satSave() {
+    scheduleRefSat.remove();
+    for (var i = 0; i < inputsSat.length; i++) {
+        
+        var detail = inputsSat[i].value;
+        var shift = shiftSat[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefSat = scheduleRefSat.push();
+            newScheduleRefSat.set({
+            detail: detail,
+            shift: shift
+          });
+        };
+    }
+}
+function sunSave() {
+    scheduleRefSun.remove();
+    for (var i = 0; i < inputsSun.length; i++) {
+        
+        var detail = inputsSun[i].value;
+        var shift = shiftSun[i].value;
+        
+        saveSchedule(detail, shift);
+        
+        function saveSchedule(detail, shift){
+            var newScheduleRefSun = scheduleRefSun.push();
+            newScheduleRefSun.set({
+            detail: detail,
+            shift: shift
+          });
+        };
     }
 }
 
