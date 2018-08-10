@@ -1,10 +1,10 @@
 // Firebase
 var config = {
-    apiKey: "AIzaSyDta8QWCoPA50fK2EbaRuZgR2-_0YlhxX0",
-    authDomain: "hart-academy.firebaseapp.com",
-    databaseURL: "https://hart-academy.firebaseio.com",
-    projectId: "hart-academy",
-    storageBucket: "hart-academy.appspot.com",
-    messagingSenderId: "1050608724072"
+    apiKey: "AIzaSyCdv5aoLZ8dPpUa4wX8bXOItZAOHzrAOBA",
+    authDomain: "hartacademy-001.firebaseapp.com",
+    databaseURL: "https://hartacademy-001.firebaseio.com",
+    projectId: "hartacademy-001",
+    storageBucket: "hartacademy-001.appspot.com",
+    messagingSenderId: "150606027513"
 };
 firebase.initializeApp(config);
