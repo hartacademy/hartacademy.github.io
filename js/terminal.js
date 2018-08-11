@@ -42,6 +42,71 @@ function saveAnnouncement(author, content, title, created){
   });
 };
 
+// Pricing
+
+// Ref firebase
+var membershipRefSixClasses = firebase.database().ref('membership/6classes');
+var membershipRefTwelveClasses = firebase.database().ref('membership/12classes');
+var membershipRefUnlimitedClasses = firebase.database().ref('membership/unlimitedclasses');
+var membershipRefOneDay = firebase.database().ref('membership/1day');
+var membershipRefOneClass = firebase.database().ref('membership/1class');
+var membershipRefPrivate = firebase.database().ref('membership/1privateclass');
+var membershipRefOneWeek = firebase.database().ref('membership/1week');
+// Submit Btn pressed
+document.getElementById('pricingForm').addEventListener('submit', submitPricing);
+// Submit pricing
+function submitPricing(e){
+  e.preventDefault();
+
+  // Get values
+  var sixClasses = getInputVal('price-6-classes');
+  var twelveClasses = getInputVal('price-12-classes');
+  var nClasses = getInputVal('price-unlimited');
+  var oneDay = getInputVal('price-1-day');
+  var oneClass = getInputVal('price-1-class');
+  var onePrivate = getInputVal('price-1-private');
+  var oneWeek = getInputVal('price-1-week');
+
+  // Save pricing
+  savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek);
+    
+  // Show alert
+    document.getElementById('pricingAlert').style.border = 'none';
+    document.getElementById('pricingAlert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.getElementById('pricingAlert').style.display = 'none';
+  },5000);
+
+  // Clear form
+  document.getElementById('pricingForm').reset();
+}
+// Save pricing data to firebase
+function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek){
+  membershipRefSixClasses.set({
+    price: sixClasses
+  });
+  membershipRefTwelveClasses.set({
+    price: twelveClasses
+  });
+  membershipRefUnlimitedClasses.set({
+    price: nClasses
+  });
+  membershipRefOneDay.set({
+    price: oneDay
+  });
+  membershipRefOneClass.set({
+    price: oneClass
+  });
+  membershipRefPrivate.set({
+    price: onePrivate
+  });
+  membershipRefOneWeek.set({
+    price: oneWeek
+  });
+};
+
 // Schedule
 
 // Pull data from firebase and paste into placeholder
@@ -275,7 +340,7 @@ firebase.database().ref('schedule/sunday/').once('value').then(function(snapshot
         var createMainDiv = document.createElement("div");
         createMainDiv.className = "uk-margin uk-flex uk-flex-middle";
         var createInput = document.createElement("input");
-        createInput.className = "uk-input uk-margin-small-right saturday";
+        createInput.className = "uk-input uk-margin-small-right sunday";
         createInput.type = "text";
         createInput.placeholder = (id.detail);
         var createSelectDiv = document.createElement("div");
@@ -371,7 +436,7 @@ function wedSave() {
     scheduleRefWed.remove();
     for (var i = 0; i < inputsWed.length; i++) {
         
-        var detail = inputsWedn[i].value;
+        var detail = inputsWed[i].value;
         var shift = shiftWed[i].value;
         
         saveSchedule(detail, shift);

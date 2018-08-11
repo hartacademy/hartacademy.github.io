@@ -256,33 +256,34 @@
                         </li>
                         <!-- pricing -->
                         <li>
-                            <form style="overflow: hidden;">
+                            <form style="overflow: hidden;" id="pricingForm">
                                 <fieldset class="uk-fieldset">
                                     <div class="uk-margin uk-child-width-1-4@s uk-grid-small" uk-grid>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="6 classes" name="price-6-classes">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="6 classes" id="price-6-classes">
                                         </div>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="12 classes" name="price-12-classes">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="12 classes" id="price-12-classes">
                                         </div>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="Unlimited" name="price-unlimited">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="Unlimited" id="price-unlimited">
                                         </div>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="1 Day" name="price-1-day">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="1 Day" id="price-1-day">
                                         </div>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="Single Class" name="price-1-class">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="Single Class" id="price-1-class">
                                         </div>
                                         <div>
-                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="1h Private" name="price-1-private">
+                                            <input class="uk-input uk-margin-small-right" type="number" placeholder="1h Private" id="price-1-private">
                                         </div>
                                         <div>
-                                            <input class="uk-input" type="number" placeholder="1 Week" name="price-1-week">
+                                            <input class="uk-input" type="number" placeholder="1 Week" id="price-1-week">
                                         </div>
                                     </div>
                                     <div class="uk-margin uk-flex uk-flex-right">
-                                        <a class="uk-button uk-button-default submit" type="submit">SAVE</a>
+                                        <p class="uk-button" style="display: none" id="pricingAlert">Saved</p>
+                                        <button class="uk-button uk-button-default" type="submit">SAVE</button>
                                     </div>
                                 </fieldset>
                             </form>
