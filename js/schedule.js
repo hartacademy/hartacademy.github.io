@@ -1,3 +1,32 @@
+var defaultLangEn = true;
+var classEn = document.querySelectorAll("h2.english, ul.english");
+var classKh = document.querySelectorAll("h2.khmer, ul.khmer");
+
+function langChange() {
+    var currentLang = defaultLangEn;
+    if (currentLang == true) {
+        
+        for (var i = 0; i < classEn.length; ++i) {
+            classEn[i].classList.add("uk-hidden");
+        };
+        for (var i = 0; i < classKh.length; ++i) {
+            classKh[i].classList.remove("uk-hidden");
+        };
+        
+        return defaultLangEn = false;
+    } else {
+        
+        for (var i = 0; i < classEn.length; ++i) {
+            classEn[i].classList.remove("uk-hidden");
+        };
+        for (var i = 0; i < classKh.length; ++i) {
+            classKh[i].classList.add("uk-hidden");
+        };
+        
+        return defaultLangEn = true;
+    }
+}
+
 // pull schedule data from Firebase ----------
 firebase.database().ref('schedule/monday/').once('value').then(function(snapshot) {
     snapshot.forEach(function(userSnapshot) {
