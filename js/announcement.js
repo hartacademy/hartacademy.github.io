@@ -30,8 +30,8 @@ firebase.database().ref('posts/').once('value').then(function(snapshot) {
             createPara.appendChild(paraText);
 
         createArticle.appendChild(createAuthor);
-        createArticle.appendChild(createHeading);
         createArticle.appendChild(createPostDate);
+        createArticle.appendChild(createHeading);
         createArticle.appendChild(createPara);
 
         var articleContainer = document.getElementById("announcement-body");
