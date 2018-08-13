@@ -42,6 +42,8 @@ function saveAnnouncement(author, content, title, created){
   });
 };
 
+// User detail
+
 // Pricing
 
 // Ref firebase
@@ -145,7 +147,6 @@ firebase.database().ref('schedule/monday/').once('value').then(function(snapshot
         createMainDiv.appendChild(createSelectDiv);
 
         document.getElementById("monday").appendChild(createMainDiv);
-        console.log(createMainDiv);
     });
 });
 firebase.database().ref('schedule/tuesday/').once('value').then(function(snapshot) {
