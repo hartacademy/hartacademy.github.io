@@ -1,6 +1,6 @@
 var defaultLangEn = true;
-var classEn = document.querySelectorAll("h2.english, ul.english, div.english");
-var classKh = document.querySelectorAll("h2.khmer, ul.khmer, div.khmer");
+var classEn = document.querySelectorAll("h2.english, ul.english, div.english, p.english");
+var classKh = document.querySelectorAll("h2.khmer, ul.khmer, div.khmer, p.khmer");
 
 function langChange() {
     var currentLang = defaultLangEn;
