@@ -63,9 +63,6 @@
                             CONTACT
                         </a>
                     </li>
-                    <li>
-                        <a class="uk-button uk-button-text" uk-icon="sign-in"></a>
-                    </li>
                 </ul>
                 <!-- nav tablet -->
                 <ul class="uk-navbar-nav uk-hidden@l">
@@ -108,10 +105,7 @@
                     <li class="uk-nav-divider"></li>
                     <li class="uk-flex uk-flex-around uk-margin-small-top">
                         <a href="https://www.facebook.com/hartacademyjj/" target="_blank" uk-icon="icon: facebook"></a>
-                        <div class="uk-margin-large-left"></div>
                         <a href="https://www.instagram.com/hart.jiujitsu/" target="_blank" uk-icon="icon: instagram"></a>
-                        <div class="uk-margin-large-left"></div>
-                        <a href="terminal.html" uk-icon="sign-in"></a>
                     </li>
                 </ul>
             </div>
@@ -124,24 +118,24 @@
                     TERMINAL
                 </h2>
             </div>
-            <div class="uk-flex uk-flex-center uk-margin-medium-top">
+            <div class="uk-flex uk-flex-center uk-margin-medium-top" id="signInForm">
                 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
-                    <form style="overflow: hidden;" id="signIn">
+                    <form style="overflow: hidden;">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
-                                <input class="uk-input" type="email" placeholder="Email" id="signInEmail">
+                                <input class="uk-input" type="email" placeholder="Email" id="email">
                             </div>
                             <div class="uk-margin">
-                                <input class="uk-input" type="password" placeholder="Password" id="signInPassword">
+                                <input class="uk-input" type="password" placeholder="Password" id="password">
                             </div>
                             <div class="uk-margin">
-                                <button class="uk-button uk-button-default" type="submit" style="float: right;">SUBMIT</button>
+                                <button class="uk-button uk-button-default" type="submit" style="float: right;" id="sign-in" onclick="toggleSignIn()">SIGN IN</button>
                             </div>
                         </fieldset>
                     </form>
                 </div>
             </div>
-            <div class="uk-grid-medium uk-margin-medium-top uk-margin-medium-bottom uk-hidden" uk-grid>
+            <div class="uk-grid-medium uk-margin-medium-top uk-margin-medium-bottom form-hidden" uk-grid id="toolsForm">
                 <div class="uk-width-1-3@l uk-width-1-1@m">
                     <article class="uk-comment">
                         <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
@@ -149,10 +143,10 @@
                                 <img class="uk-comment-avatar" src="data/square-logo-with-flower.png" width="80" height="80" alt="">
                             </div>
                             <div class="uk-width-expand">
-                                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">User Name</a></h4>
+                                <h4 class="uk-comment-title uk-margin-remove">User Name</h4>
                                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                                    <li><a href="#">Administrator</a></li>
-                                    <li><a href="#">Sign out</a></li>
+                                    <li><a>Administrator</a></li>
+                                    <li><a href="#" onclick="toggleSignOut()">Sign out</a></li>
                                 </ul>
                             </div>
                         </header>

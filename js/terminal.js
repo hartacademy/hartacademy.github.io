@@ -44,6 +44,55 @@ function saveAnnouncement(author, content, title, created){
 
 // User detail
 
+// Sign in
+function toggleSignIn() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+    }
+    if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+    }
+    // Sign in with email and pass.
+    // [START authwithemail]
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+        } else {
+            alert(errorMessage);
+        }
+        console.log(error);
+    });
+    // [END authwithemail]
+    document.getElementById('sign-in').disabled = true;
+}
+// Sign out
+function toggleSignOut() {
+    firebase.auth().signOut();
+    document.getElementById('sign-in').disabled = false;
+}
+// State
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        console.log("Signed In");
+        document.getElementById('signInForm').classList.add("uk-hidden");
+        document.getElementById('toolsForm').classList.remove("uk-hidden");
+    } else {
+        console.log("Not Signed In");
+        document.getElementById('signInForm').classList.remove("uk-hidden");
+        document.getElementById('toolsForm').classList.add("uk-hidden");
+    }
+});
+// Animation
+
+
 // Pricing
 
 // Ref firebase
