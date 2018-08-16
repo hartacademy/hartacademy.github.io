@@ -81,11 +81,9 @@ function toggleSignOut() {
 // State
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        console.log("Signed In");
         document.getElementById('signInForm').classList.add("uk-hidden");
         document.getElementById('toolsForm').classList.remove("uk-hidden");
     } else {
-        console.log("Not Signed In");
         document.getElementById('signInForm').classList.remove("uk-hidden");
         document.getElementById('toolsForm').classList.add("uk-hidden");
     }
