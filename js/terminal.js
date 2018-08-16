@@ -83,9 +83,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         document.getElementById('signInForm').classList.add("uk-hidden");
         document.getElementById('toolsForm').classList.remove("uk-hidden");
+        document.getElementsByTagName("hr")[0].classList.remove("uk-hidden");
     } else {
         document.getElementById('signInForm').classList.remove("uk-hidden");
         document.getElementById('toolsForm').classList.add("uk-hidden");
+        document.getElementsByTagName("hr")[0].classList.add("uk-hidden");
     }
 });
 // Animation
