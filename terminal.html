@@ -110,7 +110,35 @@
                 </ul>
             </div>
         </div>
-        <!-- modal announcement -->
+        <!-- modal change password -->
+        <div id="change-password-modal" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-header uk-padding">
+                    <h2 class="uk-modal-title">CHANGE PASSWORD</h2>
+                </div>
+                <div class="uk-modal-body" uk-overflow-auto>
+                    <form style="overflow: hidden" id="change-password-form">
+                        <fieldset class="uk-fieldset">
+                            <div class="uk-margin">
+                                <input class="uk-input" type="password" placeholder="New Password" id="new-password-one">
+                            </div>
+                            <div class="uk-margin">
+                                <input class="uk-input" type="password" placeholder="Re-enter New Password" id="new-password-two">
+                            </div>
+                            <div class="uk-margin">
+                                <span class="alert uk-hidden" id="password-change-success-text">Password changed successfully</span>
+                                <span class="alert uk-hidden" id="password-change-incorrect-text">Password don't match</span>
+                                <span class="alert uk-hidden" id="password-change-too-short-text">Password needs to be at least 8 characters long</span>
+                                <span class="alert uk-hidden" id="password-change-error">An error occured. Please contact administrator</span>
+                                <span class="alert uk-hidden" id="change-password-text"></span>
+                                <button class="uk-button uk-button-default" type="button" style="float: right;" id="change-password-btn" onclick="changePassword()">SAVE</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
         <!-- content -->
         <div class="uk-section page-content uk-padding-remove uk-margin-medium-top" uk-height-viewport="expand: true" style="min-height: 900px;">
             <div class="page-title">

@@ -60,6 +60,7 @@ function toggleSignIn() {
     // [START authwithemail]
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
+        document.getElementById('sign-in').disabled = false;
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
@@ -68,7 +69,6 @@ function toggleSignIn() {
         } else {
             alert(errorMessage);
         }
-        console.log(error);
     });
     // [END authwithemail]
     document.getElementById('sign-in').disabled = true;
@@ -638,4 +638,52 @@ function satRemoveRow() {
 function sunRemoveRow() {
     var select = document.getElementById('sunday');
     select.removeChild(select.lastChild);
+}
+
+// Change Password
+function changePassword() {
+    var user = firebase.auth().currentUser;
+    var newPasswordOne = document.getElementById("new-password-one").value;
+    var newPasswordTwo = document.getElementById("new-password-two").value;
+    
+    if (newPasswordOne.length < 8) {
+        // Show alert
+        document.getElementById('password-change-too-short-text').classList.remove("uk-hidden");
+        // Hide alert after 3 seconds
+        setTimeout(function(){
+            document.getElementById('password-change-too-short-text').classList.add("uk-hidden");
+        },5000);
+        return;
+    }
+    if (newPasswordTwo != newPasswordOne) {
+        // Show alert
+        document.getElementById('password-change-incorrect-text').classList.remove("uk-hidden");
+        // Hide alert after 3 seconds
+        setTimeout(function(){
+            document.getElementById('password-change-incorrect-text').classList.add("uk-hidden");
+        },5000);
+        return;
+    }
+    
+    user.updatePassword(newPasswordOne).then(function() {
+        // Disable save button
+        document.getElementById('change-password-btn').disabled = true;
+        // Show alert
+        document.getElementById('password-change-success-text').classList.remove("uk-hidden");
+        // Hide alert after 3 seconds
+        setTimeout(function(){
+            document.getElementById('password-change-success-text').classList.add("uk-hidden");
+            document.getElementById('change-password-btn').disabled = false;
+            },5000);
+        // Clear form
+        document.getElementById("change-password-form").reset();
+        
+    }).catch(function(error) {
+        // Show alert
+        document.getElementById('password-change-error').classList.remove("uk-hidden");
+        // Hide alert after 3 seconds
+        setTimeout(function(){
+            document.getElementById('password-change-error').classList.add("uk-hidden");
+        },5000);
+    });
 }
