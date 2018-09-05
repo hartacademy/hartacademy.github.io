@@ -84,10 +84,12 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('signInForm').classList.add("uk-hidden");
         document.getElementById('toolsForm').classList.remove("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.remove("uk-hidden");
+        console.log("logged in");
     } else {
         document.getElementById('signInForm').classList.remove("uk-hidden");
         document.getElementById('toolsForm').classList.add("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.add("uk-hidden");
+        console.log("please log in");
     }
 });
 // Animation
