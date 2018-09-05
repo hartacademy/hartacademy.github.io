@@ -110,6 +110,9 @@ span.alert {
 .square-logo {
     height: 20em;
 }
+.square-logo.preview {
+    height: 12em;
+}
 .main-logo {
     height: 60px;
 }
