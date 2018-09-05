@@ -689,3 +689,43 @@ function changePassword() {
         },5000);
     });
 }
+
+// Storage
+
+var storageRefIntro = firebase.storage().ref('cover/intro-cover');
+var fileUploadIntro = document.getElementById("intro-cover-input");
+var storageRefAbout = firebase.storage().ref('cover/about-cover');
+var fileUploadAbout = document.getElementById("about-cover-input");
+var storageRefSchedule = firebase.storage().ref('cover/schedule-cover');
+var fileUploadSchedule = document.getElementById("schedule-cover-input");
+var storageRefOrkas = firebase.storage().ref('cover/orkas-cover');
+var fileUploadOrkas = document.getElementById("orkas-cover-input");
+var storageRefContact = firebase.storage().ref('cover/contact-cover');
+var fileUploadContact = document.getElementById("contact-cover-input");
+var storageRefArtist = firebase.storage().ref('cover/artist-cover');
+var fileUploadArtist = document.getElementById("artist-cover-input");
+
+fileUploadIntro.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefIntro.put(firstFile)
+});
+fileUploadAbout.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefAbout.put(firstFile)
+});
+fileUploadSchedule.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefSchedule.put(firstFile)
+});
+fileUploadOrkas.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefOrkas.put(firstFile)
+});
+fileUploadContact.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefContact.put(firstFile)
+});
+fileUploadArtist.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRefArtist.put(firstFile)
+});
