@@ -690,7 +690,25 @@ function changePassword() {
     });
 }
 
-// Storage
+// Page design
+
+var introCard = document.getElementById('intro-card').children[0];
+var aboutCard = document.getElementById('card-about').children[0];
+var scheduleCard = document.getElementById('card-schedule').children[0];
+var orkasCard = document.getElementById('card-orkas').children[0];
+var contactCard = document.getElementById('card-contact').children[0];
+var artistCard = document.getElementById('card-artist').children[0];
+
+introCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fintro-cover?alt=media&token=32e4bfed-74c8-4b9a-9e97-f65270f23f04')";
+aboutCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fabout-cover?alt=media&token=3472d145-b6ab-4ac8-8243-1c7751de72c1')";
+scheduleCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fschedule-cover?alt=media&token=f1ff4d76-872f-46e0-b2b3-21f9dd44b6ea')";
+orkasCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Forkas-cover?alt=media&token=e5e941ba-2f36-4432-afca-34032d266535')";
+contactCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fcontact-cover?alt=media&token=15c871a7-27ee-4d98-affe-c49dc990ade8')";
+artistCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fartist-cover?alt=media&token=0ae2ab07-6173-4986-b98d-ec43dd91dbb5')";
+
+function alertUploadDone() {
+    alert("Done. Please refresh page to see changes");
+}
 
 var storageRefIntro = firebase.storage().ref('cover/intro-cover');
 var fileUploadIntro = document.getElementById("intro-cover-input");
@@ -705,27 +723,46 @@ var fileUploadContact = document.getElementById("contact-cover-input");
 var storageRefArtist = firebase.storage().ref('cover/artist-cover');
 var fileUploadArtist = document.getElementById("artist-cover-input");
 
-fileUploadIntro.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+fileUploadIntro.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefIntro.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
-fileUploadAbout.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+
+fileUploadAbout.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefAbout.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
-fileUploadSchedule.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+fileUploadSchedule.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefSchedule.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
-fileUploadOrkas.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+fileUploadOrkas.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefOrkas.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
-fileUploadContact.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+fileUploadContact.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefContact.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
-fileUploadArtist.addEventListener('change', function(evt) {
-    let firstFile = evt.target.files[0]
+fileUploadArtist.addEventListener('change', function(upl) {
+    let firstFile = upl.target.files[0]
     let uploadTask = storageRefArtist.put(firstFile)
+    setTimeout(function(){
+        alertUploadDone();
+    },5000);
 });
