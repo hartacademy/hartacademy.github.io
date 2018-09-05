@@ -1,6 +1,9 @@
 // Storage
-const storageService = firebase.storage();
-const storageRef = storageService.ref();
 
-document.getElementById('upload-box').addEventListener('change', handleFileUploadChange);
-document.getElementById('upload-btn').addEventListener('click', handleFileUploadSubmit);
+var storageRef = firebase.storage().ref('cover/artist-cover');
+var fileUpload = document.getElementById("artist-cover-input");
+
+fileUpload.addEventListener('change', function(evt) {
+    let firstFile = evt.target.files[0]
+    let uploadTask = storageRef.put(firstFile)
+});

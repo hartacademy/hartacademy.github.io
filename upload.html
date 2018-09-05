@@ -13,16 +13,14 @@
     </head>
     <body>
         <div class="js-upload" uk-form-custom>
-            <input type="file" id="upload-box">
+            <input type="file" accept="image/*" capture="camera" id="artist-cover-input">
             <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
-            <button class="uk-button uk-button-default" id="upload-btn">SUBMIT</button>
         </div>
-
-        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+        
+        <button onclick="consolelog()">aaa</button>
         
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
         <script src="js/firebase.js"></script>
-        <script src="js/terminal.js"></script>
         <script src="js/upload.js"></script>
     </body>
 </html>
