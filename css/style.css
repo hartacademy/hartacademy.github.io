@@ -134,11 +134,11 @@ span.alert {
     padding-left: 8px;
 }
 .noon {
-    border-left: 20px solid #d3d3d3;
+    border-left: 20px solid #bedeea;
     padding-left: 8px;
 }
 .evening {
-    border-left: 20px solid #036;
+    border-left: 20px solid #555a63;
     padding-left: 8px;
 }
 @media only screen and (min-width: 1200px) {
