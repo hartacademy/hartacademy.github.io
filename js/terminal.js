@@ -45,7 +45,8 @@ function saveAnnouncement(author, content, title, created){
 // User detail
 
 // Sign in
-function toggleSignIn() {
+document.getElementById('sign-in').addEventListener('click', function(event) {
+    event.preventDefault();
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     if (email.length < 4) {
@@ -56,40 +57,33 @@ function toggleSignIn() {
         alert('Please enter a password.');
         return;
     }
-    // Sign in with email and pass.
-    // [START authwithemail]
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
         document.getElementById('sign-in').disabled = false;
         var errorCode = error.code;
         var errorMessage = error.message;
-        // [START_EXCLUDE]
         if (errorCode === 'auth/wrong-password') {
             alert('Wrong password.');
         } else {
             alert(errorMessage);
         }
     });
-    // [END authwithemail]
     document.getElementById('sign-in').disabled = true;
-}
+})
 // Sign out
-function toggleSignOut() {
+document.getElementById('sign-out').addEventListener('click', function() {
     firebase.auth().signOut();
     document.getElementById('sign-in').disabled = false;
-}
+});
 // State
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         document.getElementById('signInForm').classList.add("uk-hidden");
         document.getElementById('toolsForm').classList.remove("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.remove("uk-hidden");
-        console.log("logged in");
     } else {
         document.getElementById('signInForm').classList.remove("uk-hidden");
         document.getElementById('toolsForm').classList.add("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.add("uk-hidden");
-        console.log("please log in");
     }
 });
 // Animation
