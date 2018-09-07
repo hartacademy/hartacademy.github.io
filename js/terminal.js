@@ -42,8 +42,6 @@ function saveAnnouncement(author, content, title, created){
   });
 };
 
-// User detail
-
 // Sign in
 document.getElementById('sign-in').addEventListener('click', function(event) {
     event.preventDefault();
@@ -75,19 +73,32 @@ document.getElementById('sign-out').addEventListener('click', function() {
     document.getElementById('sign-in').disabled = false;
 });
 // State
+// User detail
+var userNameHolder = document.getElementById('logged-in-user-name');
+var userNamePosition = document.getElementById('logged-in-user-position');
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         document.getElementById('signInForm').classList.add("uk-hidden");
         document.getElementById('toolsForm').classList.remove("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.remove("uk-hidden");
+        
+        var ref = firebase.database().ref('users').child(user.uid);;
+        ref.once("value").then(function(snapshot) {
+            var userDetail = snapshot.val();
+            userNameHolder.innerHTML = userDetail.name;
+            userNamePosition.innerHTML = userDetail.position;
+        });
+        
+        
     } else {
         document.getElementById('signInForm').classList.remove("uk-hidden");
         document.getElementById('toolsForm').classList.add("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.add("uk-hidden");
+        
+        userNameHolder.innerHTML = "User Name";
+        userNamePosition.innerHTML = "Position";
     }
 });
-// Animation
-
 
 // Pricing
 
