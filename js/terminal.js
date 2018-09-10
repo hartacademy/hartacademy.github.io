@@ -700,14 +700,14 @@ function changePassword() {
 var introCard = document.getElementById('intro-card').children[0];
 var aboutCard = document.getElementById('card-about').children[0];
 var scheduleCard = document.getElementById('card-schedule').children[0];
-var orkasCard = document.getElementById('card-orkas').children[0];
+var aokasCard = document.getElementById('card-aokas').children[0];
 var contactCard = document.getElementById('card-contact').children[0];
 var artistCard = document.getElementById('card-artist').children[0];
 
 introCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fintro-cover?alt=media&token=32e4bfed-74c8-4b9a-9e97-f65270f23f04')";
 aboutCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fabout-cover?alt=media&token=3472d145-b6ab-4ac8-8243-1c7751de72c1')";
 scheduleCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fschedule-cover?alt=media&token=f1ff4d76-872f-46e0-b2b3-21f9dd44b6ea')";
-orkasCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Forkas-cover?alt=media&token=e5e941ba-2f36-4432-afca-34032d266535')";
+aokasCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Forkas-cover?alt=media&token=e5e941ba-2f36-4432-afca-34032d266535')";
 contactCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fcontact-cover?alt=media&token=15c871a7-27ee-4d98-affe-c49dc990ade8')";
 artistCard.style.backgroundImage = "url('https://firebasestorage.googleapis.com/v0/b/hart-academy.appspot.com/o/cover%2Fartist-cover?alt=media&token=0ae2ab07-6173-4986-b98d-ec43dd91dbb5')";
 
@@ -721,8 +721,8 @@ var storageRefAbout = firebase.storage().ref('cover/about-cover');
 var fileUploadAbout = document.getElementById("about-cover-input");
 var storageRefSchedule = firebase.storage().ref('cover/schedule-cover');
 var fileUploadSchedule = document.getElementById("schedule-cover-input");
-var storageRefOrkas = firebase.storage().ref('cover/orkas-cover');
-var fileUploadOrkas = document.getElementById("orkas-cover-input");
+var storageRefAokas = firebase.storage().ref('cover/aokas-cover');
+var fileUploadAokas = document.getElementById("aokas-cover-input");
 var storageRefContact = firebase.storage().ref('cover/contact-cover');
 var fileUploadContact = document.getElementById("contact-cover-input");
 var storageRefArtist = firebase.storage().ref('cover/artist-cover');
@@ -750,9 +750,9 @@ fileUploadSchedule.addEventListener('change', function(upl) {
         alertUploadDone();
     },5000);
 });
-fileUploadOrkas.addEventListener('change', function(upl) {
+fileUploadAokas.addEventListener('change', function(upl) {
     let firstFile = upl.target.files[0]
-    let uploadTask = storageRefOrkas.put(firstFile)
+    let uploadTask = storageRefAokas.put(firstFile)
     setTimeout(function(){
         alertUploadDone();
     },5000);
