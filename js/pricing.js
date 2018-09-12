@@ -82,6 +82,15 @@ membershipRefOnePrivate.on('value', function(snap) {
         priceOnePrivateKh.innerHTML = '$'+ snap.val();
     }
 });
+var priceWomen = document.getElementById('price-women');
+var priceWomenKh = document.getElementById('price-women-kh');
+var membershipRefWomen = firebase.database().ref('membership/womenclass/price');
+membershipRefWomen.on('value', function(snap) {
+    if(snap.val()) {
+        priceWomen.innerHTML = '$'+ snap.val();
+        priceWomenKh.innerHTML = '$'+ snap.val();
+    }
+});
 var priceOneWeek = document.getElementById('price-1-week');
 var priceOneWeekKh = document.getElementById('price-1-week-kh');
 var membershipRefOneWeek= firebase.database().ref('membership/1week/price');

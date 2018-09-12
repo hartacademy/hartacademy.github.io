@@ -110,6 +110,7 @@ var membershipRefOneDay = firebase.database().ref('membership/1day');
 var membershipRefOneClass = firebase.database().ref('membership/1class');
 var membershipRefPrivate = firebase.database().ref('membership/1privateclass');
 var membershipRefOneWeek = firebase.database().ref('membership/1week');
+var membershipRefWomen = firebase.database().ref('membership/womenclass');
 // Submit Btn pressed
 document.getElementById('pricingForm').addEventListener('submit', submitPricing);
 // Submit pricing
@@ -124,9 +125,10 @@ function submitPricing(e){
   var oneClass = getInputVal('price-1-class');
   var onePrivate = getInputVal('price-1-private');
   var oneWeek = getInputVal('price-1-week');
+  var oneWomen = getInputVal('price-women');
 
   // Save pricing
-  savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek);
+  savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek, oneWomen);
     
   // Show alert
     document.getElementById('pricingAlert').style.border = 'none';
@@ -141,7 +143,7 @@ function submitPricing(e){
   document.getElementById('pricingForm').reset();
 }
 // Save pricing data to firebase
-function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek){
+function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, onePrivate, oneWeek, oneWomen){
   membershipRefSixClasses.set({
     price: sixClasses
   });
@@ -162,6 +164,9 @@ function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, oneP
   });
   membershipRefOneWeek.set({
     price: oneWeek
+  });
+  membershipRefWomen.set({
+    price: oneWomen
   });
 };
 
