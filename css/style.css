@@ -132,17 +132,34 @@ span.alert {
 .squarelogo-container {
     min-height: 600px;
 }
-.morning {
-    border-left: 20px solid #ffeeb9;
-    padding-left: 8px;
+.morning:before, .noon:before, .evening:before {
+    content: "• ";
+    font-size: 48px;
+    line-height: 18px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    padding: 0 0 4px 0;
+    margin: 0 0 0 8px;
 }
-.noon {
-    border-left: 20px solid #bedeea;
-    padding-left: 8px;
+.morning:before {
+    color: #ffeeb9;
 }
-.evening {
-    border-left: 20px solid #555a63;
-    padding-left: 8px;
+.noon:before {
+    color: #bedeea;
+}
+.evening:before {
+    color: #555a63;
+}
+@media only screen and (max-width: 1200px) {
+    .morning:before, .noon:before, .evening:before {
+        font-size: 36px;
+        line-height: 16px;
+        width: 16px;
+        padding: 0 0 2px 0;
+        margin: 0 0 0 6px;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .enlarge-on-hover-small {
