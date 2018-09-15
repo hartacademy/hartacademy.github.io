@@ -119,3 +119,50 @@ firebase.database().ref('schedule/sunday/').once('value').then(function(snapshot
         document.getElementById("sunday").appendChild(createLi);
     });
 });
+
+var refBasic = firebase.database().ref('schedule/description/basic');
+var refRegular= firebase.database().ref('schedule/description/regular');
+var refFundamental = firebase.database().ref('schedule/description/fundamental');
+var refMonthly = firebase.database().ref('schedule/description/monthly');
+var refWorknplay = firebase.database().ref('schedule/description/worknplay');
+var refKidsjj = firebase.database().ref('schedule/description/kidsjj');
+var refKidstkd = firebase.database().ref('schedule/description/kidstkd');
+var refWomen = firebase.database().ref('schedule/description/women');
+var refWrestling = firebase.database().ref('schedule/description/wrestling');
+
+refBasic.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desBasic').innerHTML = text.text;
+});
+refRegular.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desRegular').innerHTML = text.text;
+});
+refFundamental.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desFundamental').innerHTML = text.text;
+});
+refMonthly.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desMonthly').innerHTML = text.text;
+});
+refWorknplay.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desWorknplay').innerHTML = text.text;
+});
+refKidsjj.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desKidsjj').innerHTML = text.text;
+});
+refKidstkd.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desKidstkd').innerHTML = text.text;
+});
+refWomen.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desWomen').innerHTML = text.text;
+});
+refWrestling.once('value').then(function(snapshot) {
+    var text = snapshot.val();
+    document.getElementById('desWrestling').innerHTML = text.text;
+});

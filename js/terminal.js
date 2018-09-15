@@ -7,24 +7,13 @@ document.getElementById('announcementForm').addEventListener('submit', submitAnn
 // Submit announcement
 function submitAnnouncement(e){
   e.preventDefault();
-
   // Get values
   var author = getInputVal('annAuthor');
   var content = getInputVal('annDetail');
   var title = getInputVal('annTitle');
   var created = new Date().toLocaleString();
-
   // Save announcement
   saveAnnouncement(author, content, title, created);
-/*
-  // Show alert
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },5000);
-*/
   // Clear form
   document.getElementById('announcementForm').reset();
 }
@@ -82,7 +71,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         document.getElementById('toolsForm').classList.remove("uk-hidden");
         document.getElementsByTagName("hr")[0].classList.remove("uk-hidden");
         
-        var ref = firebase.database().ref('users').child(user.uid);;
+        var ref = firebase.database().ref('users').child(user.uid);
         ref.once("value").then(function(snapshot) {
             var userDetail = snapshot.val();
             userNameHolder.innerHTML = userDetail.name;
@@ -167,6 +156,166 @@ function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, oneP
   });
   membershipRefWomen.set({
     price: oneWomen
+  });
+};
+
+// Schedule Description
+
+// Ref firebase
+var scheDesBasic = firebase.database().ref('schedule/description/basic');
+var scheDesRegular = firebase.database().ref('schedule/description/regular');
+var scheDesFundamental = firebase.database().ref('schedule/description/fundamental');
+var scheDesMonthly = firebase.database().ref('schedule/description/monthly');
+var scheDesWorknplay = firebase.database().ref('schedule/description/worknplay');
+var scheDesKidsjj = firebase.database().ref('schedule/description/kidsjj');
+var scheDesKidstkd = firebase.database().ref('schedule/description/kidstkd');
+var scheDesWomen = firebase.database().ref('schedule/description/women');
+var scheDesWrestling = firebase.database().ref('schedule/description/wrestling');
+// Saving
+document.getElementById('desBasicForm').addEventListener('submit', submitDesBasic);
+document.getElementById('desRegularForm').addEventListener('submit', submitDesRegular);
+document.getElementById('desFundamentalForm').addEventListener('submit', submitDesFundamental);
+document.getElementById('desMonthlyForm').addEventListener('submit', submitDesMonthly);
+document.getElementById('desWorknplayForm').addEventListener('submit', submitDesWorknplay);
+document.getElementById('desKidsjjForm').addEventListener('submit', submitDesKidsjj);
+document.getElementById('desKidstkdForm').addEventListener('submit', submitDesKidstkd);
+document.getElementById('desWomenForm').addEventListener('submit', submitDesWomen);
+document.getElementById('desWrestlingForm').addEventListener('submit', submitDesWrestling);
+
+function submitDesBasic(e){
+    e.preventDefault();
+    var basicText = getInputVal('desBasicText');
+    saveDesBasic(basicText);
+    document.getElementById('desBasicAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desBasicAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desBasicForm').reset();
+}
+function submitDesRegular(e){
+    e.preventDefault();
+    var regularText = getInputVal('desRegularText');
+    saveDesRegular(regularText);
+    document.getElementById('desRegularAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desRegularAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desRegularForm').reset();
+}
+function submitDesFundamental(e){
+    e.preventDefault();
+    var fundamentalText = getInputVal('desFundamentalText');
+    saveDesFundamental(fundamentalText);
+    document.getElementById('desFundamentalAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desFundamentalAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desFundamentalForm').reset();
+}
+function submitDesMonthly(e){
+    e.preventDefault();
+    var monthlyText = getInputVal('desMonthlyText');
+    saveDesMonthly(monthlyText);
+    document.getElementById('desMonthlyAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desMonthlyAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desMonthlyForm').reset();
+}
+function submitDesWorknplay(e){
+    e.preventDefault();
+    var worknplayText = getInputVal('desWorknplayText');
+    saveDesWorknplay(worknplayText);
+    document.getElementById('desWorknplayAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desWorknplayAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desWorknplayForm').reset();
+}
+function submitDesKidsjj(e){
+    e.preventDefault();
+    var kidsjjText = getInputVal('desKidsjjText');
+    saveDesKidsjj(kidsjjText);
+    document.getElementById('desKidsjjAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desKidsjjAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desKidsjjForm').reset();
+}
+function submitDesKidstkd(e){
+    e.preventDefault();
+    var kidstkdText = getInputVal('desKidstkdText');
+    saveDesKidstkd(kidstkdText);
+    document.getElementById('desKidstkdAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desKidstkdAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desKidstkdForm').reset();
+}
+function submitDesWomen(e){
+    e.preventDefault();
+    var womenText = getInputVal('desWomenText');
+    saveDesWomen(womenText);
+    document.getElementById('desWomenAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desWomenAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desWomenForm').reset();
+}
+function submitDesWrestling(e){
+    e.preventDefault();
+    var wrestlingText = getInputVal('desWrestlingText');
+    saveDesWrestling(wrestlingText);
+    document.getElementById('desWrestlingAlert').style.display = 'block';
+    setTimeout(function(){
+        document.getElementById('desWrestlingAlert').style.display = 'none';
+    },5000);
+    document.getElementById('desWrestlingForm').reset();
+}
+
+function saveDesBasic(basicText){
+  scheDesBasic.set({
+      text: basicText
+  });
+};
+function saveDesRegular(regularText){
+  scheDesRegular.set({
+      text: regularText
+  });
+};
+function saveDesFundamental(fundamentalText){
+  scheDesFundamental.set({
+      text: fundamentalText
+  });
+};
+function saveDesMonthly(monthlyText){
+  scheDesMonthly.set({
+      text: monthlyText
+  });
+};
+function saveDesWorknplay(worknplayText){
+  scheDesWorknplay.set({
+      text: worknplayText
+  });
+};
+function saveDesKidsjj(kidsjjText){
+  scheDesKidsjj.set({
+      text: kidsjjText
+  });
+};
+function saveDesKidstkd(kidstkdText){
+  scheDesKidstkd.set({
+      text: kidstkdText
+  });
+};
+function saveDesWomen(womenText){
+  scheDesWomen.set({
+      text: womenText
+  });
+};
+function saveDesWrestling(wrestlingText){
+  scheDesWrestling.set({
+      text: wrestlingText
   });
 };
 
@@ -740,7 +889,6 @@ fileUploadIntro.addEventListener('change', function(upl) {
         alertUploadDone();
     },5000);
 });
-
 fileUploadAbout.addEventListener('change', function(upl) {
     let firstFile = upl.target.files[0]
     let uploadTask = storageRefAbout.put(firstFile)
