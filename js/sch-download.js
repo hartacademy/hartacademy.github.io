@@ -1,8 +1,11 @@
 var schDownBtn = document.getElementById("download-schedule-btn");
-var schContent = document.querySelector("#schedule-content");
+var schContent = document.getElementById("schedule-content");
 
 schDownBtn.onclick = function() {
-    html2canvas(schContent).then(canvas => {
-        saveAs(canvas.toDataURL(), 'h-art-schedule.png');
+    domtoimage.toPng(schContent)
+    .then(function(dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        window.saveAs(dataUrl, 'H-Art-schedule.png');
     });
 }
