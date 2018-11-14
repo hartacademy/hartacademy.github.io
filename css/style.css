@@ -107,6 +107,14 @@ span.alert {
 }
 
 /* media */
+#schedule-content, #download-schedule-btn {
+    background-color: #fff;
+}
+#download-schedule-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+}
 .square-logo {
     height: 20em;
 }
