@@ -120,49 +120,21 @@ firebase.database().ref('schedule/sunday/').once('value').then(function(snapshot
     });
 });
 
-var refBasic = firebase.database().ref('schedule/description/basic');
-var refRegular= firebase.database().ref('schedule/description/regular');
-var refFundamental = firebase.database().ref('schedule/description/fundamental');
-var refMonthly = firebase.database().ref('schedule/description/monthly');
-var refWorknplay = firebase.database().ref('schedule/description/worknplay');
-var refKidsjj = firebase.database().ref('schedule/description/kidsjj');
-var refKidstkd = firebase.database().ref('schedule/description/kidstkd');
-var refWomen = firebase.database().ref('schedule/description/women');
-var refWrestling = firebase.database().ref('schedule/description/wrestling');
+// pull schedule description from firebase
+firebase.database().ref('schedule/description/').once('value').then(function(snapshot) {
+    snapshot.forEach(function(userSnapshot) {
+        var id = userSnapshot.val();
 
-refBasic.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desBasic').innerHTML = text.text;
-});
-refRegular.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desRegular').innerHTML = text.text;
-});
-refFundamental.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desFundamental').innerHTML = text.text;
-});
-refMonthly.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desMonthly').innerHTML = text.text;
-});
-refWorknplay.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desWorknplay').innerHTML = text.text;
-});
-refKidsjj.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desKidsjj').innerHTML = text.text;
-});
-refKidstkd.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desKidstkd').innerHTML = text.text;
-});
-refWomen.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desWomen').innerHTML = text.text;
-});
-refWrestling.once('value').then(function(snapshot) {
-    var text = snapshot.val();
-    document.getElementById('desWrestling').innerHTML = text.text;
+        var createBlock = document.createElement("div");
+        var createTitle = document.createElement("h4");
+        var titleText = document.createTextNode(id.title);
+        var createDes = document.createElement("p");
+        var desText = document.createTextNode(id.text);
+            createTitle.appendChild(titleText);
+            createTitle.className = "heading-title";
+            createDes.appendChild(desText);
+            createBlock.appendChild(createTitle);
+            createBlock.appendChild(createDes);
+        document.getElementById("classDes").appendChild(createBlock);
+    });
 });

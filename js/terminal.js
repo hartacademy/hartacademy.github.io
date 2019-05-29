@@ -161,163 +161,36 @@ function savePricing(sixClasses, twelveClasses, nClasses, oneDay, oneClass, oneP
 
 // Schedule Description
 
-// Ref firebase
-var scheDesBasic = firebase.database().ref('schedule/description/basic');
-var scheDesRegular = firebase.database().ref('schedule/description/regular');
-var scheDesFundamental = firebase.database().ref('schedule/description/fundamental');
-var scheDesMonthly = firebase.database().ref('schedule/description/monthly');
-var scheDesWorknplay = firebase.database().ref('schedule/description/worknplay');
-var scheDesKidsjj = firebase.database().ref('schedule/description/kidsjj');
-var scheDesKidstkd = firebase.database().ref('schedule/description/kidstkd');
-var scheDesWomen = firebase.database().ref('schedule/description/women');
-var scheDesWrestling = firebase.database().ref('schedule/description/wrestling');
-// Saving
-document.getElementById('desBasicForm').addEventListener('submit', submitDesBasic);
-document.getElementById('desRegularForm').addEventListener('submit', submitDesRegular);
-document.getElementById('desFundamentalForm').addEventListener('submit', submitDesFundamental);
-document.getElementById('desMonthlyForm').addEventListener('submit', submitDesMonthly);
-document.getElementById('desWorknplayForm').addEventListener('submit', submitDesWorknplay);
-document.getElementById('desKidsjjForm').addEventListener('submit', submitDesKidsjj);
-document.getElementById('desKidstkdForm').addEventListener('submit', submitDesKidstkd);
-document.getElementById('desWomenForm').addEventListener('submit', submitDesWomen);
-document.getElementById('desWrestlingForm').addEventListener('submit', submitDesWrestling);
+firebase.database().ref('schedule/description/').once('value').then(function(snapshot) {
+    snapshot.forEach(function(userSnapshot) {
+        var id = userSnapshot.val();
+        
+        var createFieldset = document.createElement("fieldset");
+        
+        var createDiv = document.createElement("div");
+        createDiv.className = "uk-margin";
+        var createInputTitle = document.createElement("input");
+        createInputTitle.className = "description-title uk-input";
+        createInputTitle.type = "text";
+        createInputTitle.placeholder = "Title";
+        createInputTitle.value = (id.title);
+        createDiv.appendChild(createInputTitle);
+        
+        var createSecDiv = document.createElement("div");
+        createSecDiv.className = "uk-margin";
+        var createInputText = document.createElement("textarea");
+        createInputText.className = "description-text uk-textarea";
+        createInputText.row = "2";
+        createInputText.placeholder = "Description";
+        createInputText.value = (id.text);
+        createSecDiv.appendChild(createInputText);
+        
+        createFieldset.appendChild(createDiv);
+        createFieldset.appendChild(createSecDiv);
 
-function submitDesBasic(e){
-    e.preventDefault();
-    var basicText = getInputVal('desBasicText');
-    saveDesBasic(basicText);
-    document.getElementById('desBasicAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desBasicAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desBasicForm').reset();
-}
-function submitDesRegular(e){
-    e.preventDefault();
-    var regularText = getInputVal('desRegularText');
-    saveDesRegular(regularText);
-    document.getElementById('desRegularAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desRegularAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desRegularForm').reset();
-}
-function submitDesFundamental(e){
-    e.preventDefault();
-    var fundamentalText = getInputVal('desFundamentalText');
-    saveDesFundamental(fundamentalText);
-    document.getElementById('desFundamentalAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desFundamentalAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desFundamentalForm').reset();
-}
-function submitDesMonthly(e){
-    e.preventDefault();
-    var monthlyText = getInputVal('desMonthlyText');
-    saveDesMonthly(monthlyText);
-    document.getElementById('desMonthlyAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desMonthlyAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desMonthlyForm').reset();
-}
-function submitDesWorknplay(e){
-    e.preventDefault();
-    var worknplayText = getInputVal('desWorknplayText');
-    saveDesWorknplay(worknplayText);
-    document.getElementById('desWorknplayAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desWorknplayAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desWorknplayForm').reset();
-}
-function submitDesKidsjj(e){
-    e.preventDefault();
-    var kidsjjText = getInputVal('desKidsjjText');
-    saveDesKidsjj(kidsjjText);
-    document.getElementById('desKidsjjAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desKidsjjAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desKidsjjForm').reset();
-}
-function submitDesKidstkd(e){
-    e.preventDefault();
-    var kidstkdText = getInputVal('desKidstkdText');
-    saveDesKidstkd(kidstkdText);
-    document.getElementById('desKidstkdAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desKidstkdAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desKidstkdForm').reset();
-}
-function submitDesWomen(e){
-    e.preventDefault();
-    var womenText = getInputVal('desWomenText');
-    saveDesWomen(womenText);
-    document.getElementById('desWomenAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desWomenAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desWomenForm').reset();
-}
-function submitDesWrestling(e){
-    e.preventDefault();
-    var wrestlingText = getInputVal('desWrestlingText');
-    saveDesWrestling(wrestlingText);
-    document.getElementById('desWrestlingAlert').style.display = 'block';
-    setTimeout(function(){
-        document.getElementById('desWrestlingAlert').style.display = 'none';
-    },5000);
-    document.getElementById('desWrestlingForm').reset();
-}
-
-function saveDesBasic(basicText){
-  scheDesBasic.set({
-      text: basicText
-  });
-};
-function saveDesRegular(regularText){
-  scheDesRegular.set({
-      text: regularText
-  });
-};
-function saveDesFundamental(fundamentalText){
-  scheDesFundamental.set({
-      text: fundamentalText
-  });
-};
-function saveDesMonthly(monthlyText){
-  scheDesMonthly.set({
-      text: monthlyText
-  });
-};
-function saveDesWorknplay(worknplayText){
-  scheDesWorknplay.set({
-      text: worknplayText
-  });
-};
-function saveDesKidsjj(kidsjjText){
-  scheDesKidsjj.set({
-      text: kidsjjText
-  });
-};
-function saveDesKidstkd(kidstkdText){
-  scheDesKidstkd.set({
-      text: kidstkdText
-  });
-};
-function saveDesWomen(womenText){
-  scheDesWomen.set({
-      text: womenText
-  });
-};
-function saveDesWrestling(wrestlingText){
-  scheDesWrestling.set({
-      text: wrestlingText
-  });
-};
+        document.getElementById("scheduleDesForm").appendChild(createFieldset);
+    });
+});
 
 // Schedule
 
@@ -592,6 +465,8 @@ var scheduleRefFri = firebase.database().ref('schedule/friday');
 var scheduleRefSat = firebase.database().ref('schedule/saturday');
 var scheduleRefSun = firebase.database().ref('schedule/sunday');
 
+var scheduleRefDes = firebase.database().ref('schedule/description');
+
 var inputsMon = document.getElementsByClassName("monday");
 var shiftMon = document.getElementsByClassName("shiftMon");
 var inputsTue = document.getElementsByClassName("tuesday");
@@ -606,6 +481,9 @@ var inputsSat = document.getElementsByClassName("saturday");
 var shiftSat = document.getElementsByClassName("shiftSat");
 var inputsSun = document.getElementsByClassName("sunday");
 var shiftSun = document.getElementsByClassName("shiftSun");
+
+var inputsDesTitle = document.getElementsByClassName("description-title");
+var inputsDesText = document.getElementsByClassName("description-text");
 
 function monSave() {
     scheduleRefMon.remove();
@@ -734,6 +612,25 @@ function sunSave() {
     }
 }
 
+function desSave() {
+    scheduleRefDes.remove();
+    for (var i = 0; i < inputsDesTitle.length; i++) {
+        
+        var desTitle = inputsDesTitle[i].value;
+        var desText = inputsDesText[i].value;
+        
+        saveDescription(desTitle, desText);
+        
+        function saveDescription(desTitle, desText){
+            var newScheduleRefDes = scheduleRefDes.push();
+            newScheduleRefDes.set({
+            title: desTitle,
+            text: desText
+          });
+        };
+    }
+}
+
 // Add new row
 function monAddRow() {
     var lastRow = document.getElementById("monday").lastChild;
@@ -771,6 +668,12 @@ function sunAddRow() {
     document.getElementById("sunday").appendChild(clone);
 }
 
+function desAddRow() {
+    var lastRow = document.getElementById("scheduleDesForm").lastChild;
+    var clone = lastRow.cloneNode(true);
+    document.getElementById("scheduleDesForm").appendChild(clone);
+}
+
 // Remove row
 function monRemoveRow() {
     var select = document.getElementById('monday');
@@ -798,6 +701,11 @@ function satRemoveRow() {
 }
 function sunRemoveRow() {
     var select = document.getElementById('sunday');
+    select.removeChild(select.lastChild);
+}
+
+function desRemoveRow() {
+    var select = document.getElementById('scheduleDesForm');
     select.removeChild(select.lastChild);
 }
 
