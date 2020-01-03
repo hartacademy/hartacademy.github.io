@@ -27,6 +27,59 @@ function langChange() {
     }
 }
 
+// Pull data from firebase
+
+firebase.database().ref('membership/detail/').once('value').then(function(snapshot) {
+    snapshot.forEach(function(userSnapshot) {
+        var id = userSnapshot.val();
+        
+        var divOne = document.createElement("div");
+        var divTwo = document.createElement("div");
+            divTwo.className = "uk-card uk-card-default uk-card-body enlarge-on-hover-medium";
+        
+        var titleEng = document.createElement("div");
+            titleEng.className = "memb-header-wrapper english";
+        var pricing = document.createElement("h3");
+        var pricingText = document.createTextNode(id.amount);
+            pricing.appendChild(pricingText);
+        var typeEng = document.createElement("span");
+        var typeEngText = document.createTextNode(id.pereng);
+            typeEng.appendChild(typeEngText);
+        
+            titleEng.appendChild(pricing);
+            titleEng.appendChild(typeEng);
+        
+        var desEng = document.createElement("p");
+            desEng.className = "english";
+        var desEngText = document.createTextNode(id.deseng);
+            desEng.appendChild(desEngText);
+        
+            divTwo.appendChild(titleEng);
+            divTwo.appendChild(desEng);
+        
+            divOne.appendChild(divTwo);
+        
+        document.getElementById("membership-plan").appendChild(divOne);
+        
+        // Appending blocks
+
+        /* var createBlock = document.createElement("div");
+        var createTitle = document.createElement("h4");
+        var titleText = document.createTextNode(id.title);
+        var createDes = document.createElement("p");
+        var desText = document.createTextNode(id.text);
+            createTitle.appendChild(titleText);
+            createTitle.className = "heading-title";
+            createDes.appendChild(desText);
+            createBlock.appendChild(createTitle);
+            createBlock.appendChild(createDes);
+        document.getElementById("classDes").appendChild(createBlock);
+        */
+    });
+});
+
+/* Legacy
+
 // pull pricing data from Firebase ----------
 var priceSixClasses = document.getElementById('price-6-classes');
 var priceSixClassesKh = document.getElementById('price-6-classes-kh');
@@ -100,3 +153,5 @@ membershipRefOneWeek.on('value', function(snap) {
         priceOneWeekKh.innerHTML = '$'+ snap.val();
     }
 });
+
+*/

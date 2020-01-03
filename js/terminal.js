@@ -100,8 +100,6 @@ var membershipRefOneClass = firebase.database().ref('membership/1class');
 var membershipRefPrivate = firebase.database().ref('membership/1privateclass');
 var membershipRefOneWeek = firebase.database().ref('membership/1week');
 var membershipRefWomen = firebase.database().ref('membership/womenclass');
-// Submit Btn pressed
-document.getElementById('pricingForm').addEventListener('submit', submitPricing);
 // Submit pricing
 function submitPricing(e){
   e.preventDefault();
@@ -166,6 +164,7 @@ firebase.database().ref('schedule/description/').once('value').then(function(sna
         var id = userSnapshot.val();
         
         var createFieldset = document.createElement("fieldset");
+            createFieldset.className = "uk-fieldset";
         
         var createDiv = document.createElement("div");
         createDiv.className = "uk-margin";
@@ -189,6 +188,47 @@ firebase.database().ref('schedule/description/').once('value').then(function(sna
         createFieldset.appendChild(createSecDiv);
 
         document.getElementById("scheduleDesForm").appendChild(createFieldset);
+    });
+});
+
+// Membership and Description
+
+firebase.database().ref('membership/detail/').once('value').then(function(snapshot) {
+    snapshot.forEach(function(userSnapshot) {
+        var id = userSnapshot.val();
+        
+        var createFieldset = document.createElement("fieldset");
+            createFieldset.className = "uk-fieldset";
+        
+        var createDivOne = document.createElement("div");
+            createDivOne.className = "uk-margin uk-flex uk-flex-middle";
+        var createInput = document.createElement("input");
+            createInput.className = "uk-input uk-margin-small-right membership-amount";
+            createInput.type = "text";
+            createInput.placeholder = "Amount";
+            createInput.value = (id.amount);
+        var createTypeEng = document.createElement("input");
+            createTypeEng.className = "uk-input membership-type-eng";
+            createTypeEng.type = "text";
+            createTypeEng.placeholder = "Month/Week/Day/Class";
+            createTypeEng.value = (id.pereng);
+        
+        createDivOne.appendChild(createInput);
+        createDivOne.appendChild(createTypeEng);
+        
+        var createDivTwo = document.createElement("div");
+            createDivTwo.className = "uk-margin";
+        var createTextEng = document.createElement("textarea");
+            createTextEng.className = "uk-textarea membership-text-eng";
+            createTextEng.placeholder = "Description Eng";
+            createTextEng.value = (id.deseng);
+        
+        createDivTwo.appendChild(createTextEng);
+        
+        createFieldset.appendChild(createDivOne);
+        createFieldset.appendChild(createDivTwo);
+        
+        document.getElementById("membershipForm").appendChild(createFieldset);
     });
 });
 
@@ -467,6 +507,8 @@ var scheduleRefSun = firebase.database().ref('schedule/sunday');
 
 var scheduleRefDes = firebase.database().ref('schedule/description');
 
+var membRefDes = firebase.database().ref('membership/detail/');
+
 var inputsMon = document.getElementsByClassName("monday");
 var shiftMon = document.getElementsByClassName("shiftMon");
 var inputsTue = document.getElementsByClassName("tuesday");
@@ -484,6 +526,10 @@ var shiftSun = document.getElementsByClassName("shiftSun");
 
 var inputsDesTitle = document.getElementsByClassName("description-title");
 var inputsDesText = document.getElementsByClassName("description-text");
+
+var membAmount = document.getElementsByClassName("membership-amount");
+var membTypeEng = document.getElementsByClassName("membership-type-eng");
+var membTextEng = document.getElementsByClassName("membership-text-eng");
 
 function monSave() {
     scheduleRefMon.remove();
@@ -631,6 +677,27 @@ function desSave() {
     }
 }
 
+function membSaveRow() {
+    membRefDes.remove();
+    for (var i = 0; i < membAmount.length; i++) {
+        
+        var amount = membAmount[i].value;
+        var typeEng = membTypeEng[i].value;
+        var textEng = membTextEng[i].value;
+        
+        saveMembDetail(amount, typeEng, textEng);
+        
+        function saveMembDetail(amount, typeEng, textEng){
+            var newMembRefDes = membRefDes.push();
+            newMembRefDes.set({
+            amount: amount,
+            pereng: typeEng,
+            deseng: textEng,
+          });
+        };
+    }
+}
+
 // Add new row
 function monAddRow() {
     var lastRow = document.getElementById("monday").lastChild;
@@ -674,6 +741,12 @@ function desAddRow() {
     document.getElementById("scheduleDesForm").appendChild(clone);
 }
 
+function membAddRow() {
+    var lastRow = document.getElementById("membershipForm").lastChild;
+    var clone = lastRow.cloneNode(true);
+    document.getElementById("membershipForm").appendChild(clone);
+}
+
 // Remove row
 function monRemoveRow() {
     var select = document.getElementById('monday');
@@ -706,6 +779,11 @@ function sunRemoveRow() {
 
 function desRemoveRow() {
     var select = document.getElementById('scheduleDesForm');
+    select.removeChild(select.lastChild);
+}
+
+function membRemoveRow() {
+    var select = document.getElementById('membershipForm');
     select.removeChild(select.lastChild);
 }
 
